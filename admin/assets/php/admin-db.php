@@ -95,7 +95,7 @@
 		//Fetch complaint details by ID
 
 		public function fetchComplaint($id){
-			$sql = "SELECT notes.id, notes.title, notes.note, notes.created_at, notes.updated_at, users.name, users.email FROM notes INNER JOIN users ON notes.uid = users.id";
+			$sql = "SELECT * FROM notes WHERE id = :id";
 			$stmt = $this->conn->prepare($sql);
 			$stmt->execute(['id'=>$id]);
 			$result = $stmt->fetch(PDO::FETCH_ASSOC);

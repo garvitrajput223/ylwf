@@ -20,7 +20,7 @@ $(document).ready(function(){
 		});
 	}
 	
-	//Fetch complaint details
+	//Fetch user details
 	$("body").on("click", ".userDetailsIcon", function(e){
 		e.preventDefault();
 		complaint_id = $(this).attr('id');
@@ -30,21 +30,15 @@ $(document).ready(function(){
 			data: { complaint_id: complaint_id },
 			success: function(response){
 				data = JSON.parse(response);
-				$("#getName").text('Name : '+data.name);
-				$("#getEmail").text('Email : '+data.email);
-				$("#getPhone").text('Phone : '+data.phone);
-				$("#getTitle").text('Aadhaar Number : '+data.uid);
-				$("#getdata").text('DOB : '+data.dob);
-				$("#getCreated").text('Gender : '+data.gender);
-				// $("#getCreated").text('Joined On : '+data.created_at);
-				// //$("#getVerified").text('Verified : '+data.verified);
+				$("#getTitle").text('Title: '+data.title);
+				$("#getData").text(''+data.note);
 				// $("#getAddress").text('Address : '+data.address+', '+data.city+', '+data.state+' - '+data.zip_code+', '+data.country+'.');
 
-				if(data.photo != ''){
-					$("#getImage").html('<img src="../assets/php/'+data.photo+'" class="img-fluid align-self-center" width="280px">');
-				} else {
-					$("#getImage").html('<img src="../assets/img/profiles/avatar.png" class="img-fluid align-self-center" width="280px">');
-				}
+				// if(data.photo != ''){
+				// 	$("#getImage").html('<img src="../assets/php/'+data.photo+'" class="img-fluid align-self-center" width="280px">');
+				// } else {
+				// 	$("#getImage").html('<img src="../assets/img/profiles/avatar.png" class="img-fluid align-self-center" width="280px">');
+				// }
 			}
 		});
 	});

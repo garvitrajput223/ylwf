@@ -24,7 +24,6 @@
 									<h4 class="card-title">Total Registred Users</h4>
 								</div>
 								<div class="card-body">
-
 									<div class="table-responsive" id="showAllUsers">
 										<h4 class="text-center text-lead mt-2">Please Wait...</h4>
 									</div>

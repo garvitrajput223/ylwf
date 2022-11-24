@@ -21,7 +21,7 @@
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">Total Complaints by all Users</h4>
+									<h4 class="card-title">Total Complaints</h4>
 								</div>
 								<div class="card-body">
 
@@ -36,36 +36,35 @@
 				</div>			
 			</div>
 			<!-- /Page Wrapper -->
-			<div class="modal fade" id="showComplaintDetailsModal">
-			<div class="modal-dialog modal-dialog-centered mw-100 w-50">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title" id="getName"></h4>
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-					</div>
-					<div class="modal-body">
-						<div class="card-deck">
-							<div class="card border-primary">
-								<div class="card-body">
-									<p id="getName"></p>
-									<p id="getEmail"></p>
-									<p id="getTitle"></p>
-									<p id="getData"></p>
-									<p id="getCreated"></p>
-								</div>
-							</div>
-							<div class="card align-self-center" id="getImage"></div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 		
         </div>
 		<!-- /Main Wrapper -->
+		<div class="modal fade" id="showComplaintDetailsModal">
+				<div class="modal-dialog modal-dialog-centered mw-100 w-50">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title" id="getTitle"></h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<div class="card-deck">
+								<div class="card border-primary">
+									<div class="card-body">
+										<h3 class="text-center">COMPLAINT DETAILS</h3>
+										<p style="text-align:justify;" id="getData"></p>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		
 		<!-- jQuery -->
         <script src="assets/js/jquery-3.2.1.min.js"></script>

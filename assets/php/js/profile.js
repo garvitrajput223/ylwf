@@ -17,6 +17,8 @@ $(document).ready(function(){
 			}
 		});
 	});
+	
+	
 
 	//Change password Ajax Request
 	$("#changePassBtn").click(function(e){

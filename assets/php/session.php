@@ -10,9 +10,8 @@
 	}
 
 	$cemail = $_SESSION['user'];
-
 	$data = $cuser->currentUser($cemail);
-
+	$docs = $cuser->DisplayDocs($cemail);
 	$cid = $data['id'];
 	$cname = $data['name'];
 	$cpass = $data['password'];
@@ -22,6 +21,7 @@
 	$cdob = $data['dob'];
 	$cphoto = $data['photo'];
 	$created = $data['created_at'];
+	$caadhaar = $data['aadhaarImage'];
 
 	$reg_on = date('d M Y', strtotime($created));
 

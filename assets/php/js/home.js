@@ -110,7 +110,7 @@ $(document).ready(function(){
 				Swal.fire({
 					title: '<strong>Complaint : ID('+data.id+')</strong>',
 					icon: 'info',
-					html: '<b>Title: </b>'+data.title+'<br><br><b>Complaint: </b>'+data.note+'<br><br><b>Written on: </b>'+data.created_at+'<br><br><b>Updated on: </b>'+data.updated_at,
+					html: '<b>Title: </b>'+data.title+'<br><br><b>Complaint: </b>'+data.note+'<br><br><b>Location: </b>'+data.location+'<br><br><b>Lost On: </b>'+data.lostDate+'<br><br><b>Written on: </b>'+data.created_at+'<br><br><b>Updated on: </b>'+data.updated_at,
 					showCloseButton: true
 				});
 			}

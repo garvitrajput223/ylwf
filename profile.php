@@ -40,7 +40,7 @@
 									</div>
 									<div class="col-auto profile-btn">
 										<a data-toggle="modal" href="#edit_personal_details" class="btn btn-primary">
-											Edit Profile
+											Complete Profile
 										</a>
 									</div>
 								</div>
@@ -52,6 +52,9 @@
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" data-toggle="tab" href="#password_tab">Password</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="tab" href="#MyDocuments">Upload Documents</a>
 									</li>
 								</ul>
 							</div>	
@@ -272,7 +275,36 @@
 									</div>
 								</div>
 								<!-- /Change Password Tab -->
-								
+								<!-- MY DOCUMENTS TAB -->
+								<div id="MyDocuments" class="tab-pane fade">
+									<div class="card">
+										<div class="card-body">
+											<h5 class="card-title">Upload or View Your Documents</h5>
+											<div class="row">
+												<div class="col-md-10 col-lg-6">
+													<form action="#" enctype="multipart/form-data" method="post" id="uploadDocuments">
+													<input type="hidden" name="oldUIDimage" value = "<?=$caadhaar?>">
+														<div class="col-12">
+															<div class="form-group">
+																<label for="profilePhoto">Upload Aadhaar</label>
+																<input type="file" class="form-control" name="UIDimage" id="profilePhoto">
+															</div>
+														</div>
+														
+														<button class="btn btn-primary" type="submit" name="uploadAadhaar" id="UploadAadhaarButton">Save File <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;" id="edit-profile-spinner"></span></button>
+													</form>
+													<div class="col-auto profile-image">
+														<img class="image" style="width:500px ;"  src="<?='assets/php/'.$caadhaar?>" alt="Document">
+													</div>
+												</div>
+												<div class="col-md-10 col-lg-6" style="margin-top: 125px;">
+													<div id="changePassError"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							    <!-- /MY DOCUMENTS TAB -->
 							</div>
 						</div>
 					</div>
@@ -295,6 +327,7 @@
 		<!-- Custom JS -->
 		<script src="assets/js/script.js"></script>
 		<script src="assets/php/js/profile.js"></script>
+		<script src="assets/php/js/upload.js"></script>
 		
     </body>
 

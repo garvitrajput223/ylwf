@@ -13,8 +13,9 @@
 	if (isset($_POST['action']) && $_POST['action'] == 'add_note') {
 		$title = $cuser->test_input($_POST['title']);
 		$note = $cuser->test_input($_POST['note']);
-
-		$cuser->add_new_note($cid, $title, $note);
+		$location = $cuser->test_input($_POST['location']);
+		$lostDate = $cuser->test_input($_POST['lostDate']);
+		$cuser->add_new_note($cid, $title, $note, $location, $lostDate);
 		$cuser->notification($cid, 'admin', 'Complaint Sent.');
 	}
 
@@ -84,6 +85,25 @@
 		echo json_encode($row);
 	}
 
+
+	if (isset($_FILES['UIDimage'])){
+		$oldUIDImage = $_POST['oldUIDimage'];
+		$folder = 'userdocuments/';
+	
+		if (isset($_FILES['UIDimage']['name']) && ($_FILES['UIDimage']['name'] != "")) {
+			$newImage = $folder.$_FILES['UIDimage']['name'];
+			move_uploaded_file($_FILES['UIDimage']['tmp_name'], $newImage);
+			if ($oldUIDImage != null) {
+				unlink($oldUIDImage);
+			}
+		} else {
+			$newImage = $oldUIDImage;
+		}
+		$cuser->uploadAadhaar($newImage,$cid);
+		$cuser->notification($cid, 'admin', 'Document Updated.');
+	}
+
+
 	//Handle Profile Update Ajax Request
 	if (isset($_FILES['image'])) {
 		$name = $cuser->test_input($_POST['name']);
@@ -94,6 +114,7 @@
 		$state = $cuser->test_input($_POST['state']);
 		$city = $cuser->test_input($_POST['city']);
 		$zipcode = $cuser->test_input($_POST['zipcode']);
+		
 		$country = $cuser->test_input($_POST['country']);
 
 		$oldImage = $_POST['oldimage'];
@@ -149,7 +170,7 @@
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
-            $mail->setFrom(Database::USERNAME,'Ventura - User Management');
+            $mail->setFrom(Database::USERNAME,'YLF');
             $mail->addAddress($cemail);
 
             $mail->isHTML(true);

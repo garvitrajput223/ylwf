@@ -54,7 +54,7 @@
 				$output .= '
 								<tr>
 									<td>'.$row['id'].'</td>
-									<td><img class="avatar-img rounded-circle" src="'.$uphoto.'" width="30"></td>
+									<td><img class="avatar-img" src="'.$uphoto.'" width="30"></td>
 									<td>'.$row['name'].'</td>
 									<td>'.$row['email'].'</td>
 									<td>'.$row['phone'].'</td>
@@ -127,7 +127,7 @@
 				$output .= '
 								<tr>
 									<td>'.$row['id'].'</td>
-									<td><img class="avatar-img rounded-circle" src="'.$uphoto.'" width="30"></td>
+									<td><img class="avatar-img" src="'.$uphoto.'" width="30"></td>
 									<td>'.$row['name'].'</td>
 									<td>'.$row['email'].'</td>
 									<td>'.$row['phone'].'</td>
@@ -165,7 +165,7 @@
 									<th>#</th>
 									<th>Name</th>
 									<th>Email</th>
-									<th>Complaint Title</th>
+									<th>Subject</th>
 									<th>Complaint</th>
 									<th>Written On</th>
 									<th>Updated On</th>
@@ -176,13 +176,12 @@
 						';
 			foreach ($note as $row) {
 
-				$output .= '
-								<tr>
+				$output.= '    <tr>
 									<td>'.$row['id'].'</td>
 									<td>'.$row['name'].'</td>
 									<td>'.$row['email'].'</td>
 									<td>'.$row['title'].'</td>
-									<td>'.$row['note'].'</td>
+									<td>'.substr($row['note'],0, 50).'....</td>
 									<td>'.$row['created_at'].'</td>
 									<td>'.$row['updated_at'].'</td>
 									<td>

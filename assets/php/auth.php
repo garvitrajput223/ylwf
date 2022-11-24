@@ -21,6 +21,15 @@
 			return $result;
 		}
 
+		//Display Documents
+		public function DisplayDocs($email){
+			$sql = "SELECT * FROM userdocuments WHERE email = :email";
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute(['email'=>$email]);
+			$row = $stmt->fetch(PDO::FETCH_ASSOC);
+			return $row;
+		}
+
 		//Login Existing User
 		public function login($email){
 			$sql = "SELECT email, password FROM users WHERE email = :email AND deleted != 1";
@@ -64,11 +73,14 @@
 			return true;
 		}
 
+
+
+
 		//Add New Note
-		public function add_new_note($uid, $title, $note){
-			$sql = "INSERT INTO notes (uid, title, note) VALUES (:uid, :title, :note)";
+		public function add_new_note($uid, $title, $note, $location, $lostDate){
+			$sql = "INSERT INTO notes (uid, title, note, location, lostDate) VALUES (:uid, :title, :note, :location, :lostDate)";
 			$stmt = $this->conn->prepare($sql);
-			$stmt->execute(['uid'=>$uid, 'title'=>$title, 'note'=>$note]);
+			$stmt->execute(['uid'=>$uid, 'title'=>$title, 'note'=>$note, 'location'=>$location, 'lostDate'=>$lostDate ]);
 			return true;
 		}
 
@@ -111,6 +123,22 @@
 			$sql = "UPDATE users SET name = :name, gender = :gender, dob = :dob, phone = :phone, photo = :photo, address = :address, city = :city, state = :state, zip_code = :zipcode, country = :country WHERE id = :id AND deleted != 1";
 			$stmt = $this->conn->prepare($sql);
 			$stmt->execute(['name'=>$name, 'gender'=>$gender, 'dob'=>$dob, 'phone'=>$phone, 'photo'=>$photo, 'address'=>$address, 'city'=>$city, 'state'=>$state, 'zipcode'=>$zipcode, 'country'=>$country, 'id'=>$id]);
+			return true;
+		}
+		
+		//Add To Aadhaar Column
+		// public function addAadhaar($uid,$email,$photo){
+		// 	$sql = "INSERT INTO userdocuments (uid,email, documentImage) VALUES (:uid,:email, :photo)";
+		// 	$stmt = $this->conn->prepare($sql);
+		// 	$stmt->execute(['uid'=>$uid,'email'=>$email,'photo'=>$photo]);
+		// 	return true;
+		// }
+
+		//Upload Aadhaar
+		public function uploadAadhaar($photo,$id){
+			$sql = "UPDATE users SET aadhaarImage = :photo WHERE id = :id AND deleted != 1";
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute(['photo'=>$photo, 'id'=>$id]);
 			return true;
 		}
 
