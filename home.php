@@ -58,10 +58,10 @@
 									<label for="dateLost">Date of Lost</label>
 									<input name="lostDate" type="date" class="form-control" placeholder="Date of Lost" ></input>
 								</div>
-								<div class="form-group" >
+								<!-- <div class="form-group" >
 									<label for="Documents">Supporting Documents</label> <br> <span style="color: red; line-height:0px;">(Invoice, FIR Copy, Any Image of that item, etc.)</span>
 									<input name="document" id="previewDocument" type="file" class="form-control" accept="image/jpeg,image/gif,image/png,application/pdf"  placeholder="" ></input>
-								</div>
+								</div> -->
 								<div class="form-group">
 									<button type="submit" onclick="validate()" name="addNote" id="addNoteBtn" class="btn btn-block btn-success">Submit&nbsp;
 										<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;" id="add-note-spinner"></span></button>
