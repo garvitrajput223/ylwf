@@ -61,6 +61,7 @@
 								</div>
 							</div>
 							<div class="card align-self-center" id="getImage"></div>
+							<div class="card align-self-center" id="getAadhaar"></div>
 						</div>
 					</div>
 					<div class="modal-footer">
