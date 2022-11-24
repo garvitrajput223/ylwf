@@ -2,12 +2,12 @@
 
 	class Database {
 
-		const USERNAME = 'admin@garvitrajput.ninja';
-		const PASSWORD = 'Garvit223@';
+		const USERNAME = 'your email address';
+		const PASSWORD = 'email password';
 
 		private $dsn = "mysql:host=localhost;dbname=ylwf";
 		private $dbuser = "root";
-		private $dbpass = "";
+		private $dbpass = "database password";
 
 		public $conn;
 
