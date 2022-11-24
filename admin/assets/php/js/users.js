@@ -45,8 +45,8 @@ $(document).ready(function(){
 				} else {
 					$("#getImage").html('<img src="../assets/img/profiles/avatar.png" class="img-fluid align-self-center" width="280px">');
 				}
-				if(data.photo != ''){
-					$("#getAadhaar").html('<img src="../assets/php/'+data.photo+'" class="img-fluid align-self-center" width="280px">');
+				if(data.aadhaarImage != ''){
+					$("#getAadhaar").html('<img src="../assets/php/'+data.aadhaarImage+'" class="img-fluid align-self-center" width="280px">');
 				} else {
 					$("#getAadhaar").html('<h4>Aadhaar Card Not Uploaded</h4>" class="img-fluid align-self-center" width="280px">');
 				}

@@ -60,7 +60,7 @@
 									<p id="getAddress"></p>
 								</div>
 							</div>
-							<div class="card align-self-center" id="getImage"></div>
+							<div class="card align-self-center" id="getImage"></div> <br>
 							<div class="card align-self-center" id="getAadhaar"></div>
 						</div>
 					</div>
