@@ -61,9 +61,10 @@
 								</div>
 							</div>
 							<div class="card align-self-center" id="getImage"></div> <br>
-							<div class="card align-self-center" id="getAadhaar"></div>
+							
 						</div>
 					</div>
+					<div class="card align-self-center" id="getAadhaar"></div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 					</div>
