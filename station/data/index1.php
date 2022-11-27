@@ -1,4 +1,5 @@
 <?php
+
 	session_start();
 	if(isset($_SESSION['user'])){
 		header("Location:home.php");
@@ -11,7 +12,7 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>You Lost We Found</title>
+        <title>Police Login</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -42,7 +43,7 @@
                         </div>
                         <div class="login-right">
 							<div class="login-right-wrap">
-								<h1 class="mb-4">Citizen Login</h1>
+								<h1 class="mb-4">Police Login</h1>
 								<!-- Form -->
 								<form action="#" method="post" id="login-form">
 									<div id="loginAlert"></div>

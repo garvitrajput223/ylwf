@@ -49,7 +49,7 @@
 			return $result;
 		}
 
-		//count web hits
+		//Count web hits
 		public function site_hits(){
 			$sql = "SELECT hits FROM visitors";
 			$stmt = $this->conn->prepare($sql);

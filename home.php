@@ -10,7 +10,7 @@
                 				<strong>Your E-mail is not verified! We have sent you verification link on your email, check and verify now.</strong>
                 			</div>
                 			<?php endif; ?>
-                			<h4 class="text-center mt-3">Write your complaint here</h4>
+                			<h4 class="text-center mt-3">Add Details of your lost things</h4>
                 		</div>
                 	</div>
 					
@@ -18,8 +18,8 @@
 						<div class="col-sm-12">
 							<div class="card mt-2">
 								<div class="card-header">
-									<h4 class="card-title float-left mt-2">All Complaints</h4>
-									<a href="#" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNoteModal"><i class="fa fa-plus-circle fa-lg"></i>&nbsp;Add New Complaint</a>
+									<h4 class="card-title float-left mt-2">All Listings</h4>
+									<a href="#" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNoteModal"><i class="fa fa-plus-circle fa-lg"></i>&nbsp;Add New Listing</a>
 								</div>
 								<div class="card-body">
 									<div class="table-responsive" id="showNote">
@@ -40,7 +40,7 @@
 				<div class="modal-dialog modal-dialog-center">
 					<div class="modal-content">
 						<div class="modal-header bg-danger">
-							<h4 class="modal-title text-light">Add New Complaint</h4>
+							<h4 class="modal-title text-light">Add New Listing</h4>
 							<button type="button" class="close text-light" data-dismiss="modal">&times;</button>
 						</div>
 						<div class="modal-body">
@@ -49,7 +49,7 @@
 									<input type="text" name="title" class="form-control" placeholder="Enter Title" required>
 								</div>
 								<div class="form-group">
-									<textarea name="note" class="form-control" placeholder="Write Your Complaint Here..." rows="6" required></textarea>
+									<textarea name="note" class="form-control" placeholder="Mention Everything Related To Your Lost Item..." rows="6" required></textarea>
 								</div>
 								<div class="form-group">
 									<input name="location" type="text" class="form-control" placeholder="Expected Location (if any)..." ></input>
@@ -78,7 +78,7 @@
 				<div class="modal-dialog modal-dialog-center">
 					<div class="modal-content">
 						<div class="modal-header bg-info">
-							<h4 class="modal-title text-light">Edit Note</h4>
+							<h4 class="modal-title text-light">Edit Listing</h4>
 							<button type="button" class="close text-light" data-dismiss="modal">&times;</button>
 						</div>
 						<div class="modal-body">
@@ -91,7 +91,7 @@
 									<textarea name="note" id="note" class="form-control" placeholder="Write Your Note Here..." rows="6" required></textarea>
 								</div>
 								<div class="form-group">
-									<button type="submit" name="editNote" id="editNoteBtn" class="btn btn-block btn-info">Edit Note&nbsp;
+									<button type="submit" name="editNote" id="editNoteBtn" class="btn btn-block btn-info">Edit Listing&nbsp;
 										<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;" id="edit-note-spinner"></span></button>
 								</div>
 							</form>

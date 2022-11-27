@@ -1,43 +1,9 @@
-/*
-Author       : Dreamguys
-Template Name: Ventura - Bootstrap Admin Template
-Version      : 1.0
-*/
 
-/*============================
- [Table of CSS]
+.btn-primary{
+	background-color: #ff9933;
+}
 
-1. General
-2. Table
-3. Helper Class
-4. Bootstrap Classes
-5. Select2
-6. Nav Tabs
-7. Components
-8. Header
-9. Sidebar
-10. Content
-11. Login
-12. Lock Screen
-13. Notifications
-14. Dashboard
-15. Invoice
-16. Calendar
-17. Inbox
-18. Mail View
-19. Error
-20. Chat
-21. Product
-22. Product Details
-23. Profile
-24. Template Options
-25. Responsive
 
-========================================*/
-
-/*-----------------
-	1. General
------------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Mada:400,500,600,700&display=swap');
 
@@ -93,7 +59,7 @@ input:-webkit-autofill:focus {
     height: 40px;
 }
 .form-control:focus {
-	border-color: #2962ff;
+	border-color: #F4C430;
 	box-shadow: none;
 	outline: 0 none;
 }
@@ -105,7 +71,7 @@ input:-webkit-autofill:focus {
 	height: calc(1.5em + 1rem + 2px);
 }
 a {
-	color: #009ce7;
+	color: ##FF5733;
 }
 input,
 button,
@@ -220,7 +186,7 @@ table.table td h2 a {
 	color: #333;
 }
 table.table td h2 a:hover {
-	color: #2962ff;
+	color: ##FF5733;
 }
 table.table td h2 span {
 	color: #888;
@@ -388,13 +354,13 @@ table.table td h2 span {
 }
 .bg-primary,
 .badge-primary {
-	background-color: #2962ff !important;
+	background-color: sienna !important;
 }
 a.bg-primary:focus, 
 a.bg-primary:hover, 
 button.bg-primary:focus, 
 button.bg-primary:hover {
-    background-color: #0044ff !important;
+    background-color: #F4C430 !important;
 }
 .bg-success,
 .badge-success {
@@ -408,13 +374,13 @@ button.bg-success:hover {
 }
 .bg-info,
 .badge-info {
-	background-color: #009efb !important;
+	background-color: ##FF5733 !important;
 }
 a.bg-info:focus, 
 a.bg-info:hover, 
 button.bg-info:focus, 
 button.bg-info:hover {
-    background-color: #028ee1 !important;
+    background-color: ##FF5733 !important;
 }
 .bg-warning,
 .badge-warning {
@@ -471,16 +437,16 @@ button.bg-danger:hover {
     color: #757575 !important;
 }
 .btn-primary {
-	background-color: #2962ff;
-	border: 1px solid #2962ff;
+	background-color: ##FF5733;
+	border: 1px solid ##FF5733;
 }
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary.active,
 .btn-primary:active,
 .open > .dropdown-toggle.btn-primary {
-	background-color: #0044ff;
-	border: 1px solid #0044ff;
+	background-color: ##FF5733;
+	border: 1px solid ##FF5733;
 }
 .btn-primary.active.focus,
 .btn-primary.active:focus,
@@ -491,8 +457,8 @@ button.bg-danger:hover {
 .open > .dropdown-toggle.btn-primary.focus,
 .open > .dropdown-toggle.btn-primary:focus,
 .open > .dropdown-toggle.btn-primary:hover {
-	background-color: #0044ff;
-	border: 1px solid #0044ff;
+	background-color: ##FF5733;
+	border: 1px solid #0044f#FF5733f;
 }
 .btn-primary.active:not(:disabled):not(.disabled),
 .btn-primary:active:not(:disabled):not(.disabled),
