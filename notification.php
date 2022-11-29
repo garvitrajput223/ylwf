@@ -1,13 +1,11 @@
 <?php
 	require_once 'assets/php/header.php';
 ?>
-
 	<div class="content container" style="padding-top: 5em;">
 		<div class="row justify-content-center my-2">
 			<div class="col-lg-6 mt-4" id="showAllNotification"></div>
 		</div>
 	</div>
-
 		<!-- jQuery -->
         <script src="assets/js/jquery-3.2.1.min.js"></script>
 		
@@ -25,9 +23,6 @@
 		<!-- Custom JS -->
 		<script src="assets/js/script.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
 		<script type="text/javascript" src="assets/php/js/notifications.js"></script>
-		
     </body>
-
 </html>
