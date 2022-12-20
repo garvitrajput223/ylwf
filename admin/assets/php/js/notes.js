@@ -20,7 +20,7 @@ $(document).ready(function(){
 		});
 	}
 	
-	//Fetch user details
+	//Fetch complaint details
 	$("body").on("click", ".userDetailsIcon", function(e){
 		e.preventDefault();
 		complaint_id = $(this).attr('id');
@@ -31,7 +31,9 @@ $(document).ready(function(){
 			success: function(response){
 				data = JSON.parse(response);
 				$("#getTitle").text('Title: '+data.title);
-				$("#getData").text(''+data.note);
+				$("#getData").text('Complaint/Item: '+data.note);
+				$("#getLostDate").text('Lost Date: '+data.lostDate);
+				$("#getPlace").text('Location: '+data.location);
 				// $("#getAddress").text('Address : '+data.address+', '+data.city+', '+data.state+' - '+data.zip_code+', '+data.country+'.');
 
 				// if(data.photo != ''){
@@ -44,7 +46,7 @@ $(document).ready(function(){
 	});
 
 	//Delete user note ajax reqest
-	$("body").on("click", ".deleteNoteIcon", function(e){
+	$("body").on("click", ".resolveIcon", function(e){
 		e.preventDefault();
 		note_id = $(this).attr('id');
 		Swal.fire({
@@ -54,7 +56,7 @@ $(document).ready(function(){
 		showCancelButton: true,
 		confirmButtonColor: '#3085d6',
 		cancelButtonColor: '#d33',
-		confirmButtonText: 'Yes, delete it!'
+		confirmButtonText: 'Yes, resolve it!'
 		}).then((result) => {
 			if (result.value) {
 				$.ajax({
@@ -63,8 +65,8 @@ $(document).ready(function(){
 					data: { note_id: note_id },
 					success: function(response){
 				    	Swal.fire(
-				    		'Deleted!',
-				    		'Note Deleted Successfully.',
+				    		'Success!',
+				    		'Complaint Resolved Successfully.',
 				    		'success'
 				    	)
 

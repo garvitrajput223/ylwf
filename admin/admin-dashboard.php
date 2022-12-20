@@ -23,15 +23,15 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="row">
-								<div class="col-xl-3 col-sm-4 col-12">
+								<div class="col-xl-4 col-sm-4 col-12">
 									<div class="card">
 										<div class="card-header lead text-center text-primary">Total Users</div>
 										<div class="card-body">
-											<h1 class="display-4 text-center text-primary"><?= $count->totalCount('users'); ?></h1>
+											<h1 class="display-4 text-center text-primary"><?= $count->totalUserCount('users'); ?></h1>
 										</div>
 									</div>
 								</div>
-								<div class="col-xl-3 col-sm-4 col-12">
+								<div class="col-xl-4 col-sm-4 col-12">
 									<div class="card">
 										<div class="card-header lead text-center text-warning">Verified Users</div>
 										<div class="card-body">
@@ -39,7 +39,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-xl-3 col-sm-4 col-12">
+								<div class="col-xl-4 col-sm-4 col-12">
 									<div class="card">
 										<div class="card-header lead text-center text-danger">Unverified Users</div>
 										<div class="card-body">
@@ -50,9 +50,17 @@
 								
 								<div class="col-xl-4 col-sm-4 col-12">
 									<div class="card">
-										<div class="card-header lead text-center text-secondary">Total Notes</div>
+										<div class="card-header lead text-center text-secondary">Total Unresolved Complaints</div>
 										<div class="card-body">
 											<h1 class="display-4 text-center text-secondary"><?= $count->totalCount('notes'); ?></h1>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-4 col-sm-4 col-12">
+									<div class="card">
+										<div class="card-header lead text-center text-secondary">Total Resolved Complaints</div>
+										<div class="card-body">
+											<h1 class="display-4 text-center text-secondary"><?= $count->totalResolveCount(); ?></h1>
 										</div>
 									</div>
 								</div>
@@ -75,7 +83,7 @@
 							</div>
 						</div>			
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-sm-12">
 							<div class="row">
 								<div class="col-xl-6 col-sm-4 col-12">
@@ -96,7 +104,7 @@
 								</div>
 							</div>
 						</div>			
-					</div>
+					</div> -->
 				</div>			
 			</div>
 			<!-- /Page Wrapper -->

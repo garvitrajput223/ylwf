@@ -12,10 +12,24 @@
 			$row = $stmt->fetch(PDO::FETCH_ASSOC);
 			return $row;
 		}
-
+		public function totalUserCount($user){
+			$sql = "SELECT * FROM $user";
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute();
+			$count = $stmt->rowCount();
+			return $count;
+		}
 		//count Total No. of Rows
 		public function totalCount($tablename){
-			$sql = "SELECT * FROM $tablename";
+			$sql = "SELECT * FROM $tablename WHERE status = 0";
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute();
+			$count = $stmt->rowCount();
+			return $count;
+		}
+
+		public function totalResolveCount(){
+			$sql = "SELECT * FROM notes WHERE status = 1";
 			$stmt = $this->conn->prepare($sql);
 			$stmt->execute();
 			$count = $stmt->rowCount();
@@ -86,7 +100,7 @@
 
 		//Fetch All Users Notes
 		public function fetchAllNotes(){
-			$sql = "SELECT notes.id, notes.title, notes.note, notes.created_at, notes.updated_at, users.name, users.email FROM notes INNER JOIN users ON notes.uid = users.id";
+			$sql = "SELECT notes.id, notes.title, notes.note, notes.created_at, notes.updated_at, users.name, users.email FROM notes INNER JOIN users ON notes.uid = users.id WHERE status = 0";
 			$stmt = $this->conn->prepare($sql);
 			$stmt->execute();
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -104,7 +118,8 @@
 
 		//Delete note of an User
 		public function deleteNoteOfUser($id){
-			$sql = "DELETE FROM notes WHERE id = :id";
+			//$sql = "DELETE FROM notes WHERE id = :id";
+			$sql = "UPDATE notes SET status = 1 WHERE id = :id";
 			$stmt = $this->conn->prepare($sql);
 			$stmt->execute(['id'=>$id]);
 			return true;

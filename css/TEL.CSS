@@ -1,0 +1,245 @@
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+// Colors
+$blue:    #4267B2;
+$purple:  #6A47DA;
+$pink:    #F75358;
+$red:    #FA6541;
+$orange: #F8B91C;
+$green:   #09C098;
+$teal:   #0EE25C;
+$body-color: #344051;
+$primary: blue;
+$spacer: 20px;
+
+//before and after mixin 
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.md-group {
+    position: relative;
+    margin-bottom:  15px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+    input:not([type="submit"]),
+    input:not([type="reset"]),
+    textarea,
+    select,
+    select.form-control {
+        border: none;
+        border: 1px solid $gray-400;
+        border-radius:0px;
+        background-clip:unset;
+        color:transparent;
+        padding: 15px;
+        height: 40px;
+        &::placeholder{
+        color:transparent;
+
+        }
+
+        &:focus{
+            outline:none;
+            border-color: blue;
+        	box-shadow:none;
+             color: #333 !important;
+        &::placeholder{
+        color:$gray-300 !important;
+            
+        }
+        	& +label, .ng2-tag-input-focus + label {
+        		top:0;
+                font-size:  rem(12);
+        	}
+        }
+        
+        &:invalid  {
+            .was-validated &{
+             border-bottom:1.2px solid $red;
+            }
+            & ~label {
+                .was-validated & {
+                    color:$red;
+                }
+                
+             }
+            
+        }
+         &:valid, &:invalid {
+               &:focus {
+                outline:none;
+            box-shadow:none;
+            }
+        }
+        &:valid {
+            .was-validated &{
+             border-bottom:1.2px solid $green;
+              & ~label {
+                .was-validated & {
+                    color:$green;
+                }
+                
+             }
+            }
+        }
+
+        
+    }
+    textarea {
+        height: auto;
+    }
+    label {
+    	margin:0;
+    	position: absolute;	
+    	top: 1.5rem;
+    	pointer-events: none;
+    	display:block;
+    	left:0.75rem;
+    	transition:all 0.2s ease-in-out;
+        color:$gray-500;
+        z-index: 9;
+    }
+&.is-valid {
+    border-bottom: 1.2px solid $green;
+    & ~label {
+        color:$green;
+    }
+}
+&.is-invalid {
+    border-bottom: 1.2px solid $red;
+    & ~label {
+        color:$red;
+    }
+}
+&.input-group {
+	[class*="input-group"]{
+		opacity:0;
+		visibility:hidden;
+		width:0;
+         
+	}
+	.form-control {
+		width:100%;
+	}
+}
+}
+
+.show-label {
+	label {
+        color: $blue;
+        top: -10px;
+        left: 0;
+        font-size:  rem(14);
+
+	}
+
+	&.input-group {
+		[class*="input-group"]{
+		opacity:1;
+		visibility:visible;
+		width:auto;
+	}
+	.form-control {
+		width:1%;
+	}
+	}
+    .form-control {
+         color:$body-color !important;
+      padding: 0.3125rem !important;
+        &::placeholder{
+        color:$gray-300 !important;
+            
+        }
+    }
+}
+
+.input-group-text {
+	border:none;
+}
+
+ 
+    .form-check-input {
+        display:none;
+
+        & ~label {
+            &:before {
+                @include pseudo;
+                top:rem(3);
+                left:0;
+                font-size: rem(16);
+                border:1px solid #ccc;
+                border-radius:rem(2);
+                transition:all 0.3s ease-in-out;
+
+            }
+            &:after {
+                @include pseudo;
+                top:rem(3);
+                left:rem(3);
+                content:'';
+                font-family: 'fontawesome';
+                color:white;
+                font-size: rem(12);
+    opacity:0;
+     transition:all 0.3s ease-in-out;
+
+            }
+        }
+
+        &:checked {
+            & ~label {
+                &:before {
+                    background-color: $primary;
+                    border-color:transparent;
+                }
+                &:after {
+                    opacity:1;
+                }
+            }
+        }
+    }
+.form-check {
+    padding-left: rem(28);
+}
+
+// extra styling for telephone formatting
+.billingform .intl-tel-input .form-control {
+    padding-left: 47px !important;
+}
+.intl-tel-input .flag-dropdown .selected-flag {
+  padding: 11px 16px 11px 6px;
+}
+.intl-tel-input {
+  z-index: 99;
+  width: 100%;
+}
+.iti-flag {
+  box-shadow: none;
+}
+.intl-tel-input .selected-flag:focus {
+  outline: none;
+}

@@ -186,7 +186,7 @@
 									<td>'.$row['updated_at'].'</td>
 									<td>
 										<a href="#" id="'.$row['id'].'" title="View Details" class="text-primary userDetailsIcon" data-toggle="modal" data-target="#showComplaintDetailsModal"><i class="fa fa-info-circle"></i></a>&nbsp;&nbsp;&nbsp;
-										<a href="#" id="'.$row['id'].'" title="Delete Note" class="text-danger deleteNoteIcon"><i class="fa fa-trash"></i></a>
+										<a href="#" id="'.$row['id'].'" title="Restore User" class="text-white badge badge-success resolveIcon">Resolve Complaint</a>
 									</td>
 								</tr>';
 			}	
@@ -319,6 +319,7 @@
 				<th>Phone</th>
 				<th>Gender</th>
 				<th>DOB</th>
+				<th>Aadhaar</th>
 				<th>Joined On</th>
 				<th>Verified</th>
 				<th>Deleted</th>
@@ -331,6 +332,7 @@
 					<td>'.$row['phone'].'</td>
 					<td>'.$row['gender'].'</td>
 					<td>'.$row['dob'].'</td>
+					<td>'.$row['uid'].'</td>
 					<td>'.$row['created_at'].'</td>
 					<td>'.$row['verified'].'</td>
 					<td>'.$row['deleted'].'</td>

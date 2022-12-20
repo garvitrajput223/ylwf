@@ -14,6 +14,9 @@
 	url(../fonts/MaterialIcons-Regular.woff) format('woff'),
 	url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
+
+
+
 html {
 	height: 100%;
 }
@@ -1337,7 +1340,7 @@ button.bg-danger:hover {
 -----------------------*/
 
 .header {
-	background: linear-gradient(-45deg, #3949ab, #2962ff);
+	background: linear-gradient(-45deg, #3949ab, #ff9933);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	left: 0;
 	position: fixed;

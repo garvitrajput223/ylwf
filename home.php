@@ -18,7 +18,7 @@
 						<div class="col-sm-12">
 							<div class="card mt-2">
 								<div class="card-header">
-									<h4 class="card-title float-left mt-2">All Listings</h4>
+									<h4 class="card-title float-left mt-2">All Complaints</h4>
 									<a href="#" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNoteModal"><i class="fa fa-plus-circle fa-lg"></i>&nbsp;Add New Listing</a>
 								</div>
 								<div class="card-body">
@@ -40,7 +40,7 @@
 				<div class="modal-dialog modal-dialog-center">
 					<div class="modal-content">
 						<div class="modal-header bg-danger">
-							<h4 class="modal-title text-light">Add New Listing</h4>
+							<h4 class="modal-title text-light">Add New Complaint</h4>
 							<button type="button" class="close text-light" data-dismiss="modal">&times;</button>
 						</div>
 						<div class="modal-body">
@@ -49,6 +49,7 @@
 									<input type="text" name="title" class="form-control" placeholder="Enter Title" required>
 								</div>
 								<div class="form-group">
+									<p class="text-danger">Seperate details by comma(,)</p>
 									<textarea name="note" class="form-control" placeholder="Mention Everything Related To Your Lost Item..." rows="6" required></textarea>
 								</div>
 								<div class="form-group">
@@ -56,7 +57,10 @@
 								</div>
 								<div class="form-group">
 									<label for="dateLost">Date of Lost</label>
-									<input name="lostDate" type="date" class="form-control" placeholder="Date of Lost" ></input>
+									<!-- <input name="lostDate" type="date" class="form-control" placeholder="Date of Lost" ></input> -->
+									<?php
+										echo '<input type="date" name="lostDate" class="form-control" value="' . date("Y-m-d") . '" min="2014-11-04" max="' . date("Y-m-d") . '"/>';
+									?>
 								</div>
 								<!-- <div class="form-group" >
 									<label for="Documents">Supporting Documents</label> <br> <span style="color: red; line-height:0px;">(Invoice, FIR Copy, Any Image of that item, etc.)</span>

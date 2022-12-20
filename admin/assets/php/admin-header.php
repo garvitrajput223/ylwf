@@ -110,10 +110,13 @@
 								<a href="admin-dashboard.php"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-users.php')?"active":""; ?>"> 
-								<a href="admin-users.php"><i class="fe fe-users"></i> <span>Users</span></a>
+								<a href="admin-users.php"><i class="fe fe-users"></i> <span>Active Users</span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-notes.php')?"active":""; ?>"> 
 								<a href="admin-notes.php"><i class="fe fe-file"></i> <span>Complaints</span></a>
+							</li>
+							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-resolved-notes.php')?"active":""; ?>"> 
+								<a href="admin-resolved-notes.php"><i class="fe fe-file"></i> <span>Resolved Complaints</span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-feedback.php')?"active":""; ?>"> 
 								<a href="admin-feedback.php"><i class="fe fe-comment-o"></i> <span>Feedback</span></a>
