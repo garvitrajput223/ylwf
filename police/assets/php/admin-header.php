@@ -54,7 +54,7 @@
 				<!-- Logo -->
                 <div class="header-left">
                     <a href="admin-dashboard.php" class="logo">
-						<h2 style="margin-top:10px; color:black;">Admin Panel</h2>
+						<h2 style="margin-top:10px; color:black;">Police Panel</h2>
 					</a>
 					<a href="admin-dashboard.php" class="logo logo-small">
 						<img src="assets/img/logo1.png" alt="Logo" width="80" height="30">

@@ -163,7 +163,7 @@
 
     	try {
 			$mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = 'smtp.zoho.in';
             $mail->SMTPAuth = true;
             $mail->Username = Database::USERNAME;
             $mail->Password = Database::PASSWORD;

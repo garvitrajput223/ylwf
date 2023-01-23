@@ -69,7 +69,6 @@ $(document).ready(function(){
 				    		'Complaint Resolved Successfully.',
 				    		'success'
 				    	)
-
 				    	fetchAllNotes();
 					}
 				});

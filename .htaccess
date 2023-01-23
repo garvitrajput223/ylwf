@@ -1,1 +1,2 @@
 ErrorDocument 404 /lostfound/404.html
+Redirect http://localhost/index.php http://localhost/main.html
