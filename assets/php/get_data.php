@@ -1,51 +1,34 @@
 <?php
-     $servername = "localhost";
-     $username = "root";
-     $password = "";
-     $dbname = "ylwf";
- 
-     // Create connection
-     $conn = new mysqli($servername, $username, $password, $dbname);
-     // Check connection
-     if ($conn->connect_error) {
-         die("Connection failed: " . $conn->connect_error);
-     } 
+$host = "localhost";
+$db_name = "ylwf";
+$user = "root";
+$pass = "";
 
-    //GETTING STATES, DISTRICTS, CITY DATA FROM DATABASE
-	if (isset($_GET["state_id"])) {
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$db_name", $user, $pass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    if (isset($_GET['state_id'])) {
         $state_id = $_GET['state_id'];
-        $state_name = $_GET['state_name'];
-        $sql = "SELECT district_id, district_name FROM sorted_table WHERE state_id = $state_id";
-        $result = $conn->query($sql);
-
-        $districts = array();
-        while($row = $result->fetch_assoc()) {
-            $districts[] = $row;
-        }
-
+        $stmt = $conn->prepare("SELECT district_id, district_name FROM districts WHERE state_id = :state_id");
+        $stmt->bindParam(':state_id', $state_id);
+        $stmt->execute();
+        $districts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($districts);
-    }
-    else if (isset($_GET["district_id"])) {
+    } elseif (isset($_GET['district_id'])) {
         $district_id = $_GET['district_id'];
-        $sql = "SELECT city_id, city_name FROM cities WHERE district_id = $district_id ";
-        $result = $conn->query($sql);
-
-        $cities = array();
-        while($row = $result->fetch_assoc()) {
-            $cities[] = $row;
-        }
-
+        $stmt = $conn->prepare("SELECT city_id, city_name FROM cities WHERE district_id = :district_id");
+        $stmt->bindParam(':district_id', $district_id);
+        $stmt->execute();
+        $cities = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($cities);
-    }
-    else {
-        $sql = "SELECT state_id, state_name FROM states";
-        $result = $conn->query($sql);
-
-        $states = array();
-        while($row = $result->fetch_assoc()) {
-            $states[] = $row;
-        }
-
+    } else {
+        $stmt = $conn->prepare("SELECT state_id, state_name FROM states");
+        $stmt->execute();
+        $states = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($states);
     }
-?>
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+$conn = null;

@@ -20,12 +20,11 @@ $(document).ready(function () {
 		$.ajax({
 			url: 'assets/php/get_data.php',
 			type: 'get',
-			data: {state_id: state_id},
+			data: { 'state_id': state_id },
 			dataType: 'json',
 			success: function(response) {
-				$("#district").empty();
-				$("#district").append("<option value=''>Select District</option>");
 				var len = response.length;
+				$("#district").empty();
 				for (var i = 0; i < len; i++) {
 					var id = response[i]['district_id'];
 					var name = response[i]['district_name'];
@@ -39,14 +38,13 @@ $(document).ready(function () {
 	$("#district").change(function() {
 		var district_id = $(this).val();
 		$.ajax({
-			url: 'assets/php/get_data.php',
+			url: 'get_data.php',
 			type: 'get',
-			data: {district_id: district_id},
+			data: { 'district_id': district_id },
 			dataType: 'json',
 			success: function(response) {
-				$("#city").empty();
-				$("#city").append("<option value=''>Select City</option>");
 				var len = response.length;
+				$("#city").empty();
 				for (var i = 0; i < len; i++) {
 					var id = response[i]['city_id'];
 					var name = response[i]['city_name'];

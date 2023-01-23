@@ -52,18 +52,18 @@
 					</div>
 					<div class="form-group">
 						<p class="text-danger">Seperate details by comma(,)</p>
-						<textarea name="note" class="form-control" placeholder="Mention Everything Related To Your Lost Item..." rows="6" required></textarea>
+						<textarea name="note" class="form-control" placeholder="Mention Everything Related To Your Lost Item..." rows="3" required></textarea>
 					</div>
 					<div class="form-group">
-							<select name="state" class="form-control" id="state">
-								<option value="" selected disabled>Select State</option>
-							</select> <br>
-							<select name="district" class="form-control" id="district">
-								<option value="" selected disabled>Select District</option>
-							</select> <br>
-							<select name="city" class="form-control" id="city">
-								<option value="" selected disabled>Select City</option>
-							</select>
+						<select name="state" class="form-control" id="state">
+							<option value="" selected disabled>Select State</option>
+						</select> <br>
+						<select name="district" class="form-control" id="district">
+							<option value="" selected disabled>Select District</option>
+						</select> <br>
+						<select name="city" class="form-control" id="city">
+							<option value="" selected disabled>Select City</option>
+						</select>
 					</div>
 					<div class="form-group">
 						<label for="dateLost">Date of Lost</label>
