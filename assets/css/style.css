@@ -77,7 +77,7 @@ input:-webkit-autofill:focus {
 a {
 	color: ##FF5733;
 }
-input,
+input,select,
 button,
 a {
 	transition: all 0.4s ease;
@@ -86,7 +86,7 @@ a {
 	-ms-transition: all 0.4s ease;
 	-webkit-transition: all 0.4s ease;
 }
-input, input:focus,
+input,select, input:focus,
 button, button:focus {
 	outline: none;
 }
@@ -1869,7 +1869,7 @@ html.menu-opened body {
 }
 .login-wrapper .loginbox .login-left {
     align-items: center;
-    background: linear-gradient(180deg, #3949ab, #2962ff);
+    background: linear-gradient(45deg,coral, #3949ab);
     border-radius: 6px 0 0 6px;
     flex-direction: column;
     justify-content: center;

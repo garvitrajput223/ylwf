@@ -72,14 +72,6 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-xl-4 col-sm-4 col-12">
-									<div class="card">
-										<div class="card-header lead text-center text-dark">Total Notification</div>
-										<div class="card-body">
-											<h1 class="display-4 text-center text-dark"><?= $count->totalCount('notification'); ?></h1>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>			
 					</div>

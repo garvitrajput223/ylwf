@@ -18,6 +18,7 @@
 	if (isset($_POST['action']) && $_POST['action'] == 'register') {
 		$name = $user->test_input($_POST['name']);
 		$email = $user->test_input($_POST['email']);
+		$phone = $user->test_input($_POST['mobile']);
 		$uid = $user->test_input($_POST['uid']);
 		$pass = $user->test_input($_POST['password']);
 		$password = password_hash($pass, PASSWORD_DEFAULT);
@@ -25,7 +26,7 @@
 		if ($user->user_exist($email)) {
 			echo $user->showMessage('warning', 'This E-Mail is already registred.');
 		} else {
-			if ($user->register($name,$email,$uid,$password)) {
+			if ($user->register($name,$email,$phone,$uid,$password)) {
 				echo 'register';
 				$_SESSION['user'] = $email;
 

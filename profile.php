@@ -169,7 +169,11 @@
 																	<div class="col-12 col-sm-6">
 																		<div class="form-group">
 																			<label for="state">State</label>
-																			<input type="text" name="state" id="state" class="form-control" value="<?= $state; ?>" placeholder="State">
+																			<!-- <input type="text" name="state" id="state" class="form-control" value="<?//= $state; ?>" placeholder="State"> -->
+																			<select name="state" class="form-control" id="state">
+																				<option  selected disabled>Select State</option>
+																			</select>
+																
 																		</div>
 																	</div>
 																	<div class="col-12 col-sm-6">

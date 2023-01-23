@@ -11,7 +11,7 @@
 
 	$cemail = $_SESSION['user'];
 	$data = $cuser->currentUser($cemail);
-	$docs = $cuser->DisplayDocs($cemail);
+	//$docs = $cuser->DisplayDocs($cemail);
 	$cid = $data['id'];
 	$cname = $data['name'];
 	$cpass = $data['password'];

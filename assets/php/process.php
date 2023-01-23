@@ -175,7 +175,7 @@
 
             $mail->isHTML(true);
             $mail->Subject = 'E-Mail Verification';
-            $mail->Body = '<h3>Click the below link to verify your email address.</h3><br><a href="http://localhost/user_management/verify-email.php?email='.$cemail.'&token='.$token.'">http://localhost/user_management/verify-email.php?email='.$cemail.'&token='.$token.'</a><br><br><br>Regards,<br>Ventura - User Management';
+            $mail->Body = '<h3>Click the below link to verify your email address.</h3><br><a href="http://localhost/lostfound/verify-email.php?email='.$cemail.'&token='.$token.'">http://localhost/lostfound/verify-email.php?email='.$cemail.'&token='.$token.'</a><br><br><br>Regards,<br>YLF - ADMIN';
             
             $mail->send();
 			echo $cuser->showMessage('success', 'We have send you email verification link to your email.');
@@ -231,5 +231,8 @@
     	$id = $_POST['notification_id'];
     	$cuser->removeNotification($id);
     }
+
+
+
 
 ?>

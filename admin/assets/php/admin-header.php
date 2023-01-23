@@ -47,14 +47,13 @@
 	
 		<!-- Main Wrapper -->
         <div class="main-wrapper">
-		
 			<!-- Header -->
             <div class="header">
 			
 				<!-- Logo -->
                 <div class="header-left">
                     <a href="admin-dashboard.php" class="logo">
-						<h2 style="margin-top:10px; color:black;">Police Panel</h2>
+						<h2 style="margin-top:10px; color:black;">Admin Panel</h2>
 					</a>
 					<a href="admin-dashboard.php" class="logo logo-small">
 						<img src="assets/img/logo1.png" alt="Logo" width="80" height="30">
@@ -86,7 +85,7 @@
 									<img src="assets/img/profiles/avatar.png" alt="User Image" class="avatar-img rounded-circle">
 								</div>
 								<div class="user-text">
-									<h6>Hey, <?= $_SESSION['username']; ?></h6>
+									<h6>Welcome Admin</h6>
 									<p class="text-muted mb-0">Administrator</p>
 								</div>
 							</div>
@@ -100,7 +99,7 @@
 				
             </div>
 			<!-- /Header -->
-			
+	
 			<!-- Sidebar -->
             <div class="sidebar" id="sidebar">
                 <div class="sidebar-inner slimscroll">
@@ -116,7 +115,7 @@
 								<a href="admin-notes.php"><i class="fe fe-file"></i> <span>Complaints</span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-resolved-notes.php')?"active":""; ?>"> 
-								<a href="admin-resolved-notes.php"><i class="fe fe-file"></i> <span>Resolved Complaints</span></a>
+								<a href="#"><i class="fe fe-file"></i> <span>Resolved Complaints</span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-feedback.php')?"active":""; ?>"> 
 								<a href="admin-feedback.php"><i class="fe fe-comment-o"></i> <span>Feedback</span></a>

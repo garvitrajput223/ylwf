@@ -5,10 +5,10 @@
 	class Auth extends Database {
 
 		//Register New User
-		public function register($name, $email, $uid, $password) {
-			$sql = "INSERT INTO users (name, email, uid, password) VALUES (:name, :email,:uid, :pass)";
+		public function register($name, $email,$phone, $uid, $password) {
+			$sql = "INSERT INTO users (name, email, phone, uid, password) VALUES (:name,:email,:phone,:uid, :pass)";
 			$stmt = $this->conn->prepare($sql);
-			$stmt->execute(['name'=>$name, 'email'=>$email,'uid'=>$uid , 'pass'=>$password]);
+			$stmt->execute(['name'=>$name, 'email'=>$email,'phone'=>$phone,'uid'=>$uid , 'pass'=>$password]);
 			return true;
 		}
 
@@ -22,13 +22,13 @@
 		}
 
 		//Display Documents
-		public function DisplayDocs($email){
-			$sql = "SELECT * FROM userdocuments WHERE email = :email";
-			$stmt = $this->conn->prepare($sql);
-			$stmt->execute(['email'=>$email]);
-			$row = $stmt->fetch(PDO::FETCH_ASSOC);
-			return $row;
-		}
+		// public function DisplayDocs($email){
+		// 	$sql = "SELECT * FROM userdocuments WHERE email = :email";
+		// 	$stmt = $this->conn->prepare($sql);
+		// 	$stmt->execute(['email'=>$email]);
+		// 	$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		// 	return $row;
+		// }
 
 		//Login Existing User
 		public function login($email){
@@ -101,6 +101,7 @@
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             return $result;
 		}
+
 
 		//Update note of an user
 		public function update_note($id, $title, $note){
@@ -200,5 +201,6 @@
 			return true;
         }
 	}
+	
 
  ?>
