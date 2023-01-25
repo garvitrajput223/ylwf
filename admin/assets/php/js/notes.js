@@ -33,9 +33,8 @@ $(document).ready(function(){
 				$("#getTitle").text('Title: '+data.title);
 				$("#getData").text('Complaint/Item: '+data.note);
 				$("#getLostDate").text('Lost Date: '+data.lostDate);
-				$("#getPlace").text('Location: '+data.location);
-				// $("#getAddress").text('Address : '+data.address+', '+data.city+', '+data.state+' - '+data.zip_code+', '+data.country+'.');
-
+				//$("#getPlace").text('Location: '+data.city_name);
+				$("#getAddress").text('Location : '+data.city_name+','+data.district_name+', '+data.state_name+' - '+data.pin_code);
 				// if(data.photo != ''){
 				// 	$("#getImage").html('<img src="../assets/php/'+data.photo+'" class="img-fluid align-self-center" width="280px">');
 				// } else {

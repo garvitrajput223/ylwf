@@ -126,6 +126,9 @@
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-deleteduser.php')?"active":""; ?>"> 
 								<a href="admin-deleteduser.php"><i class="fe fe-user-minus"></i> <span>Inactive Users</span></a>
 							</li>
+							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-stations.php')?"active":""; ?>"> 
+								<a href="admin-stations.php"><i class="fe fe-file"></i> <span>Police Stations</span></a>
+							</li>
 							<li> 
 								<a href="assets/php/admin-action.php?export=excel"><i class="fe fe-table"></i> <span>Export Users</span></a>
 							</li>

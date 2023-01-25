@@ -9,7 +9,7 @@ $(document).ready(function () {
 			for (var i = 0; i < len; i++) {
 				var id = response[i]['state_id'];
 				var name = response[i]['state_name'];
-				$("#state").append("<option value='" + id + "'>" + name + "</option>");
+				$("#state").append("<option value='" + id + "' data-value2='" + name + "'>" + name + "</option>");
 			}
 		}
 	});
@@ -25,10 +25,13 @@ $(document).ready(function () {
 			success: function(response) {
 				var len = response.length;
 				$("#district").empty();
+				$("#city").empty();
+				$("#city").append("<option value='' selected disabled>Select Area</option>");
+				$("#district").append("<option value='' selected disabled>Select District</option>");
 				for (var i = 0; i < len; i++) {
 					var id = response[i]['district_id'];
 					var name = response[i]['district_name'];
-					$("#district").append("<option value='" + id + "'>" + name + "</option>");
+					$("#district").append("<option value='" + id + "'data-value2='" + name + "'>" + name + "</option>");
 				}
 			}
 		});
@@ -38,17 +41,18 @@ $(document).ready(function () {
 	$("#district").change(function() {
 		var district_id = $(this).val();
 		$.ajax({
-			url: 'get_data.php',
+			url: 'assets/php/get_data.php',
 			type: 'get',
-			data: { 'district_id': district_id },
+			data: { 'district_id': district_id},
 			dataType: 'json',
 			success: function(response) {
 				var len = response.length;
 				$("#city").empty();
+				$("#city").append("<option value='' selected disabled>Select Area</option>");
 				for (var i = 0; i < len; i++) {
 					var id = response[i]['city_id'];
 					var name = response[i]['city_name'];
-					$("#city").append("<option value='" + id + "'>" + name + "</option>");
+					$("#city").append("<option value='" + id + "'data-value2='" + name + "'>" + name + "</option>");
 				}
 			}
 		});
@@ -171,7 +175,7 @@ $(document).ready(function () {
 				Swal.fire({
 					title: '<strong>Complaint : ID(' + data.id + ')</strong>',
 					icon: 'info',
-					html: '<b>Title: </b>' + data.title + '<br><br><b>Complaint: </b>' + data.note + '<br><br><b>Location: </b>' + data.location + '<br><br><b>Lost On: </b>' + data.lostDate + '<br><br><b>Written on: </b>' + data.created_at + '<br><br><b>Updated on: </b>' + data.updated_at,
+					html: '<b>Title: </b>' + data.title + '<br><br><b>Complaint: </b>' + data.note + '<br><br><b>Location: </b>' + data.location + data.city_name+ data.district_name+ data.state_name+ '<br><br><b>Lost On: </b>' + data.lostDate + '<br><br><b>Written on: </b>' + data.created_at + '<br><br><b>Updated on: </b>' + data.updated_at,
 					showCloseButton: true
 				});
 			}

@@ -55,14 +55,14 @@
 						<textarea name="note" class="form-control" placeholder="Mention Everything Related To Your Lost Item..." rows="3" required></textarea>
 					</div>
 					<div class="form-group">
-						<select name="state" class="form-control" id="state">
+						<select name="state" class="form-control" id="state" required>
 							<option value="" selected disabled>Select State</option>
 						</select> <br>
-						<select name="district" class="form-control" id="district">
+						<select name="district" class="form-control" id="district" required>
 							<option value="" selected disabled>Select District</option>
 						</select> <br>
-						<select name="city" class="form-control" id="city">
-							<option value="" selected disabled>Select City</option>
+						<select name="city" class="form-control" id="city" required>
+							<option value="" selected disabled>Select Area</option>
 						</select>
 					</div>
 					<div class="form-group">
@@ -77,7 +77,7 @@
 									<input name="document" id="previewDocument" type="file" class="form-control" accept="image/jpeg,image/gif,image/png,application/pdf"  placeholder="" ></input>
 								</div> -->
 					<div class="form-group">
-						<button type="submit" onclick="validate()" name="addNote" id="addNoteBtn" class="btn btn-block btn-success">Submit&nbsp;
+						<button type="submit"  name="addNote" id="addNoteBtn" class="btn btn-block btn-success">Submit&nbsp;
 							<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;" id="add-note-spinner"></span></button>
 					</div>
 				</form>

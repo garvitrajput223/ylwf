@@ -55,7 +55,8 @@
 										<h3 class="text-center">COMPLAINT DETAILS</h3>
 										<p style="text-align:justify;" id="getData"></p>
 										<p style="text-align:justify;" id="getLostDate"></p>
-										<p style="text-align:justify;" id="getPlace"></p>
+										<!-- <p style="text-align:justify;" id="getPlace"></p> -->
+										<p style="text-align:justify;" id="getAddress"></p>
 									</div>
 								</div>
 							</div>

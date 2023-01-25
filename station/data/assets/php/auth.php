@@ -86,7 +86,7 @@
 
 		// Fetch all notes of user
 		public function get_notes($uid){
-			$sql = "SELECT * FROM notes WHERE uid = :uid";
+			$sql = "SELECT notes.*, cities.*, districts.district_name, states.state_name FROM notes JOIN cities ON notes.city_id = cities.city_id JOIN districts ON notes.district_id = districts.district_id JOIN states ON Notes.state_id = states.state_id WHERE uid = :uid";
 			$stmt = $this->conn->prepare($sql);
             $stmt->execute(['uid'=>$uid]);
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

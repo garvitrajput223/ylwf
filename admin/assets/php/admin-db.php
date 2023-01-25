@@ -106,10 +106,12 @@
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			return $result;
 		}
+
+
 		//Fetch complaint details by ID
 
 		public function fetchComplaint($id){
-			$sql = "SELECT * FROM notes WHERE id = :id";
+			$sql = "SELECT notes.*, cities.*, districts.district_name, states.state_name FROM notes JOIN cities ON notes.city_id = cities.city_id JOIN districts ON notes.district_id = districts.district_id JOIN states ON Notes.state_id = states.state_id WHERE notes.id = :id";
 			$stmt = $this->conn->prepare($sql);
 			$stmt->execute(['id'=>$id]);
 			$result = $stmt->fetch(PDO::FETCH_ASSOC);

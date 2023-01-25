@@ -77,16 +77,16 @@
 
 
 		//Add New Note
-		public function add_new_note($uid, $title, $note, $location, $lostDate){
-			$sql = "INSERT INTO notes (uid, title, note, location, lostDate) VALUES (:uid, :title, :note, :location, :lostDate)";
+		public function add_new_note($uid, $title, $note, $city, $district, $state, $lostDate){
+			$sql = "INSERT INTO notes (uid, title, note, city_id, district_id, state_id, lostDate) VALUES (:uid, :title, :note, :city, :district, :state, :lostDate)";
 			$stmt = $this->conn->prepare($sql);
-			$stmt->execute(['uid'=>$uid, 'title'=>$title, 'note'=>$note, 'location'=>$location, 'lostDate'=>$lostDate ]);
+			$stmt->execute(['uid'=>$uid, 'title'=>$title, 'note'=>$note, 'city'=>$city, 'district'=>$district, 'state'=>$state, 'lostDate'=>$lostDate ]);
 			return true;
 		}
 
 		// Fetch all notes of user
 		public function get_notes($uid){
-			$sql = "SELECT * FROM notes WHERE uid = :uid";
+			$sql = "SELECT notes.*, cities.*, districts.district_name, states.state_name FROM notes JOIN cities ON notes.city_id = cities.city_id JOIN districts ON notes.district_id = districts.district_id JOIN states ON Notes.state_id = states.state_id WHERE notes.uid=:uid";
 			$stmt = $this->conn->prepare($sql);
             $stmt->execute(['uid'=>$uid]);
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -13,9 +13,12 @@
 	if (isset($_POST['action']) && $_POST['action'] == 'add_note') {
 		$title = $cuser->test_input($_POST['title']);
 		$note = $cuser->test_input($_POST['note']);
-		$location = $cuser->test_input($_POST['location']);
+		$state = $cuser->test_input($_POST['state']);
+		$district = $cuser->test_input($_POST['district']);
+		$city = $cuser->test_input($_POST['city']);
+		$location = $cuser->test_input($loc);
 		$lostDate = $cuser->test_input($_POST['lostDate']);
-		$cuser->add_new_note($cid, $title, $note, $location, $lostDate);
+		$cuser->add_new_note($cid, $title, $note, $city, $district, $state, $lostDate);
 		$cuser->notification($cid, 'admin', 'Complaint Sent.');
 	}
 
