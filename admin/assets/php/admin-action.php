@@ -1,6 +1,7 @@
 <?php 
 
 	require_once 'admin-db.php';
+	require_once 'create_police_station.php';
 
 	$admin = new Admin();
 	session_start();
@@ -73,6 +74,16 @@
 		} else {
 			echo "<h3 class='text-center text-secondary'>No Any User Registred Yet!</h3>";
 		}
+	}
+
+	//Adding New Police Station
+	if (isset($_POST['action']) && $_POST['action'] == 'add_station'){
+		$name = $admin->test_input($_POST['name']);
+		$email = $admin->test_input($_POST['email']);
+		$phone = $admin->test_input($_POST['phone']);
+		$pincode = $admin->test_input($_POST['pincode']);
+		$data = $admin->create_station($name, $email, $phone, $pincode);
+		echo json_encode($data);
 	}
 
 	//Handle view user ajax request
