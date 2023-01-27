@@ -81,8 +81,10 @@
 		$name = $admin->test_input($_POST['name']);
 		$email = $admin->test_input($_POST['email']);
 		$phone = $admin->test_input($_POST['phone']);
-		$pincode = $admin->test_input($_POST['pincode']);
-		$data = $admin->create_station($name, $email, $phone, $pincode);
+		$state = $admin->test_input($_POST['state']);
+		$district = $admin->test_input($_POST['district']);
+		//$pincode = $admin->test_input($_POST['pincode']);
+		$data = $admin->create_station($name, $email, $phone,$state, $district);
 		echo json_encode($data);
 	}
 

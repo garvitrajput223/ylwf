@@ -77,7 +77,7 @@
 									<input name="document" id="previewDocument" type="file" class="form-control" accept="image/jpeg,image/gif,image/png,application/pdf"  placeholder="" ></input>
 								</div> -->
 					<div class="form-group">
-						<button type="submit"  name="addNote" id="addNoteBtn" class="btn btn-block btn-success">Submit&nbsp;
+						<button type="submit" name="addNote" id="addNoteBtn" class="btn btn-block btn-success">Submit&nbsp;
 							<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;" id="add-note-spinner"></span></button>
 					</div>
 				</form>

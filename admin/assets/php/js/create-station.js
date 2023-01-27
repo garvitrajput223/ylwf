@@ -1,4 +1,27 @@
 $(document).ready(function(){
+
+        $(".create-police-station").click(function(){
+          $("#addPoliceStations").show();
+		  $("#addUsersForm").hide();
+		  $("#assignNewPincode").hide();
+
+        });
+        $(".add-users").click(function(){
+            $("#addUsersForm").show();
+			$("#addPoliceStations").hide();
+          });
+      
+          $(".assign-pincodes").click(function(){
+            $("#assignNewPincode").show();
+			$("#addPoliceStations").hide();
+            $("#addUsersForm").hide();
+
+          });
+
+
+        
+        
+      
     $.ajax({
 		url: 'assets/php/get_data.php',
 		type: 'get',
@@ -73,4 +96,21 @@ $(document).ready(function(){
             })
         }
     })
+    // $("#addStnBtn").click(function(e){
+    //     if($("#stnForm")[0].checkValidity()){
+    //         e.preventDefault();
+    //         $.ajax({
+    //             url:'assets/php/admin-action.php',
+    //             method: 'post',
+    //             data: $("#stnForm").serialize()+'&action=add_station',
+    //             success: function(response){
+    //                 Swal.fire({
+	// 					title: 'Station Added Successfully.',
+	// 					icon: 'success'
+	// 				});
+    //             }
+    //         })
+    //     }
+    // })
+
 });

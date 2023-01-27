@@ -18,15 +18,14 @@
             </div>
         </div>
         <!-- /Page Header -->
-        <div class="">
-            <a href="#" class="btn btn-primary float-left" data-toggle="modal" data-target="#addNoteModal"><i class="fa fa-plus-circle fa-lg"></i>&nbsp;Add New Station</a>
-            <a href="#" class="btn btn-primary float-left" data-toggle="modal" data-target="#addNoteModal"><i class="fa fa-plus-circle fa-lg"></i>&nbsp;Add New Station</a>
-            <a href="#" class="btn btn-primary float-left" data-toggle="modal" data-target="#addNoteModal"><i class="fa fa-plus-circle fa-lg"></i>&nbsp;Add New Station</a>
-
+        <div class="stationButtons">
+            <a href="#" class="create-police-station">Create Police Station</a>
+            <a href="#" class="add-users">Create Station Users</a>
+            <a href="#" class="assign-pincodes">Assign Pincodes</a>
         </div>
+        <br><br>
 
-
-        <div class="row" style="display:none">
+        <div class="row" style="display:none" id="addPoliceStations">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -35,16 +34,22 @@
                             <h4 />
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive" id="addPoliceStations">
+                        <div class="table-responsive">
                             <form action="#" id="stnForm">
-                                <label for="name">Name:</label>
+                                <div class="form-group">
+                                    <select name="state" class="form-control" id="state" required>
+                                        <option value="" selected disabled>Select State</option>
+                                    </select> <br>
+                                    <select name="district" class="form-control" id="district" required>
+                                        <option value="" selected disabled>Select District</option>
+                                    </select>
+                                </div>
+                                <label for="name">Alias</label>
                                 <input type="text" id="name" name="name" required>
-                                <label for="email">Email:</label>
+                                <label for="email">Email</label>
                                 <input type="email" id="email" name="email" required>
-                                <label for="phone">Phone:</label>
+                                <label for="phone">Phone</label>
                                 <input type="tel" id="phone" name="phone" required>
-                                <label for="pincode">Pincode:</label>
-                                <input type="text" id="pincode" name="pincode" required>
                                 <input type="submit" name="add-Stn-Btn" id="addStnBtn" value="Create Police Station">
                             </form>
                         </div>
@@ -55,7 +60,7 @@
 
         <!-- Register Form Wrapper -->
 
-        <div class="row" style="display:none">
+        <div class="row" style="display:none" id="addUsersForm">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -66,14 +71,7 @@
                     <div class="card-body">
                         <div class="table-responsive" id="addUsers">
                             <form action="#" id="UserAddForm">
-                                <label for="name">Name:</label>
-                                <input type="text" id="name" name="name" required>
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required>
-                                <label for="phone">Phone:</label>
-                                <input type="tel" id="phone" name="phone" required>
-                                <label for="pincode">Pincode:</label>
-                                <input type="text" id="pincode" name="pincode" required>
+                                
                                 <input type="submit" name="add-Stn-Btn" id="addStnBtn" value="Create User">
                             </form>
                         </div>
@@ -84,7 +82,7 @@
 
         <!-- /Register Main Wrapper -->
         <!-- Assign Pincode to Stations -->
-        <div class="row" style="display:none">
+        <div class="row" style="display:none" id="assignNewPincode">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -93,25 +91,32 @@
                             <h4 />
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive" id="assignPincode>
-                            <form action=" #" id="pinCodeForm">
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" required>
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                            <label for="phone">Phone:</label>
-                            <input type="tel" id="phone" name="phone" required>
-                            <label for="pincode">Pincode:</label>
-                            <input type="text" id="pincode" name="pincode" required>
-                            <input type="submit" name="add-Stn-Btn" id="addStnBtn" value="Assign">
+                        <div class="table-responsive" id="assignPincode">
+                            <form id="pincode-form">
+                                <label for="police-station">Select police station:</label>
+                                <select id="policeStations" name="policeStations">
+                                    <option value="" selected disabled>Select Police Station</option>
+                                </select>
+                                <br>
+                                <label for="pincode-list">Select pincodes:</label>
+                                <div id="pincode-list">
+                                    <select name="pincodes" id="pincodes" multiple></select>
+                                    <!-- more checkboxes -->
+                                </div>
+                                <br>
+                                <input type="submit" value="Submit">
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <br>
+        <br>
         <!-- /Assign Pincode to Stations -->
-
+        <div id="back" style="display: none;">
+            <a href="#">Go Back</a>
+        </div>
     </div>
 </div>
 <!-- /Page Wrapper -->
@@ -138,3 +143,4 @@
 <script src="assets/js/script.js"></script>
 
 <script src="assets/php/js/create-station.js"></script>
+<script src="assets/php/js/get_stations.js"></script>
