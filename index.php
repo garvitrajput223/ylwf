@@ -208,36 +208,3 @@ $db = new Database();
 </body>
 
 </html>
-
-<script>
-	function validateAadhaar() {
-		var regexp = /^[2-9]{1}[0-9]{3}-[0-9]{4}-[0-9]{4}$/;
-		var ano = document.getElementById("uid").value;
-		if (regexp.test(ano)) {
-			return true;
-		} else if (ano == '') {
-			Swal.fire("UID is Mandatory", "", "error");
-		} else {
-			Swal.fire("Invalid UID", "", "error");
-			document.getElementById('uid').value = '';
-			return false;
-		}
-	}
-
-	function addHyphen() {
-		let ele = document.getElementById('uid');
-		ele = ele.value.split('-').join(''); // Remove dash (-) if mistakenly entered.
-
-		let finalVal = ele.match(/.{1,4}/g).join("-");
-		document.getElementById('uid').value = finalVal;
-	}
-
-	function validateMobile() {
-		var mobileNumber = document.getElementById("mobile_number").value;
-		var expr = /^(0|91)?[6-9][0-9]{9}$/;
-		if (!expr.test(mobileNumber)) {
-			Swal.fire("Invalid Mobile Number", "", "error");
-			document.getElementById('mobile_number').value = '';
-		}
-	}
-</script>
