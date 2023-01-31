@@ -228,7 +228,7 @@ $db = new Database();
 		let ele = document.getElementById('uid');
 		ele = ele.value.split('-').join(''); // Remove dash (-) if mistakenly entered.
 
-		let finalVal = ele.match(/.{1,4}/g).join('-');
+		let finalVal = ele.match(/.{1,4}/g).join("-");
 		document.getElementById('uid').value = finalVal;
 	}
 

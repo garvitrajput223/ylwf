@@ -23,12 +23,14 @@
 					</div>
 					<div class="card-body">
 						<div class="table-responsive" id="showNote">
+
 							<h4 class="text-center text-lead mt-2">Please Wait...</h4>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		
 	<?php else : ?>
 		<h2 class="text-center text-secondary mt-5">:( Verify your email first to file complaint.</h2>
 	<?php endif; ?>
@@ -72,10 +74,10 @@
 						echo '<input type="date" name="lostDate" class="form-control" value="' . date("Y-m-d") . '" min="2014-11-04" max="' . date("Y-m-d") . '"/>';
 						?>
 					</div>
-					<!-- <div class="form-group" >
+								<div class="form-group" >
 									<label for="Documents">Supporting Documents</label> <br> <span style="color: red; line-height:0px;">(Invoice, FIR Copy, Any Image of that item, etc.)</span>
 									<input name="document" id="previewDocument" type="file" class="form-control" accept="image/jpeg,image/gif,image/png,application/pdf"  placeholder="" ></input>
-								</div> -->
+								</div>
 					<div class="form-group">
 						<button type="submit" name="addNote" id="addNoteBtn" class="btn btn-block btn-success">Submit&nbsp;
 							<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;" id="add-note-spinner"></span></button>
@@ -121,7 +123,9 @@
 <!-- Bootstrap Core JS -->
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js" integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css" integrity="sha512-0nkKORjFgcyxv3HbE4rzFUlENUMNqic/EzDIeYCgsKa/nwqr2B91Vu/tNAu4Q0cBuG4Xe/D1f/freEci/7GDRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Slimscroll JS -->
 <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
@@ -143,6 +147,7 @@
 
 
 <script>
+
 	// function validate() {
 	// 			var file = $("#previewDocument")[0].files[0]; //fupFileUpload add class to your file upload control
 	// 			var fileType = file.type;

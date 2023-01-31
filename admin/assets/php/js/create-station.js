@@ -1,6 +1,5 @@
 $(document).ready(function(){
-
-        $(".create-police-station").click(function(){
+          $(".create-police-station").click(function(){
           $("#addPoliceStations").show();
 		  $("#addUsersForm").hide();
 		  $("#assignNewPincode").hide();
@@ -9,19 +8,14 @@ $(document).ready(function(){
         $(".add-users").click(function(){
             $("#addUsersForm").show();
 			$("#addPoliceStations").hide();
+			$("#assignNewPincode").hide();
           });
       
           $(".assign-pincodes").click(function(){
             $("#assignNewPincode").show();
 			$("#addPoliceStations").hide();
             $("#addUsersForm").hide();
-
           });
-
-
-        
-        
-      
     $.ajax({
 		url: 'assets/php/get_data.php',
 		type: 'get',

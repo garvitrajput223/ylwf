@@ -10,13 +10,18 @@ try {
 
     if (isset($_GET['id'])) {
         $station_id = $_GET['id'];
-        $stmt = $conn->prepare("SELECT pincodes FROM cities WHERE district_id = :district_id");
-        $stmt->bindParam(':district_id', $district_id);
+        $stmt = $conn->prepare("SELECT cities.*
+                                FROM police_stations
+                                JOIN cities ON police_stations.state_id = cities.state_id
+                                AND police_stations.district_id = cities.district_id
+                                WHERE police_stations.id = :id;
+                             ");
+        $stmt->bindParam(':id', $id);
         $stmt->execute();
         $pincode = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($pincode);
     }else {
-        $stmt = $conn->prepare("SELECT * FROM police_stations");
+        $stmt = $conn->prepare("SELECT id, name FROM police_stations");
         $stmt->execute();
         $stations = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($stations);

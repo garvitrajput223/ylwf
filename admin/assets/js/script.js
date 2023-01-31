@@ -8,7 +8,7 @@
 	var $slimScrolls = $('.slimscroll');
 	
 	// Sidebar
-	
+	0000
 	var Sidemenu = function() {
 		this.$menuItem = $('#sidebar-menu a');
 	};
