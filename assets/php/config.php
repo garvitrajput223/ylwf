@@ -1,9 +1,8 @@
 <?php
 
 	class Database {
-
-		const USERNAME = 'email';
-		const PASSWORD = 'password';
+		const USERNAME = 'EMAIL';
+		const PASSWORD = 'Password';
 
 		private $dsn = "mysql:host=localhost;dbname=ylwf";
 		private $dbuser = "root";

@@ -1,7 +1,4 @@
 $(document).ready(function(){
-
-
-
 	$.ajax({
 		url: 'assets/php/get_data.php',
 		type: 'get',

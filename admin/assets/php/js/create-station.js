@@ -16,6 +16,7 @@ $(document).ready(function(){
 			$("#addPoliceStations").hide();
             $("#addUsersForm").hide();
           });
+		  
     $.ajax({
 		url: 'assets/php/get_data.php',
 		type: 'get',

@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
 	$.ajax({
 		url: 'assets/php/get_police_data.php',
 		type: 'get',
@@ -13,22 +12,22 @@ $(document).ready(function () {
 			}
 		}
 	});
-	// $("#policeStations").change(function() {
-	// 	var station_id = $(this).val();
-	// 	$.ajax({
-	// 		url: 'assets/php/get_police_data.php',
-	// 		type: 'get',
-	// 		data: { 'id': station_id },
-	// 		dataType: 'json',
-	// 		success: function(response) {
-	// 			var len = response.length;
-	// 			$("#pincodes").append("<option value='' selected disabled>Select Area</option>");
-	// 			for (var i = 0; i < len; i++) {
-	// 				var id = response[i]['district_id'];
-	// 				var name = response[i]['district_name'];
-	// 				$("#pincodes").append("<option value='" + id + "'data-value2='" + name + "'>" + name + "</option>");
-	// 			}
-	// 		}
-	// 	});
-	// });
+	$("#policeStations").change(function() {
+		var id = $(this).val();
+		$.ajax({
+			url: 'assets/php/get_police_data.php',
+			type: 'get',
+			data: { 'id': id },
+			dataType: 'json',
+			success: function(response) {
+				var len = response.length;
+				$("#pincodes").empty();
+				$("#pincodes").append("<option value='' selected disabled>Select Pincode</option>");
+				for (var i = 0; i < len; i++) {
+					var pin_code = response[i]['pin_code'];
+					$("#pincodes").append("<option value='" + pin_code + "'>" + pin_code + "</option>");
+				}
+			}
+		});
+	});
 });

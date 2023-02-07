@@ -70,6 +70,12 @@
             return true;
         }
 
+
+		//Get Pin codes of Police Station DistrictWise
+		public function getPincode($police_station_id){
+			$sql = "SELECT c.pin_code, c.district_id, c.state_id FROM police_stations s JOIN districts d ON s.district_id = d.district_id JOIN cities c ON d.district_id = c.district_id WHERE s.id = $police_station_id";
+		}
+
 		//Count web hits
 		public function site_hits(){
 			$sql = "SELECT hits FROM visitors";

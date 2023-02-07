@@ -88,11 +88,11 @@
                     <div class="card-header">
                         <h4 class="card-title">
                             Assign Pincodes to Police Stations
-                            <h4 />
+                        <h4 />
                     </div>
                     <div class="card-body">
                         <div class="table-responsive" id="assignPincode">
-                            <form id="pincode-form">
+                            <form id="pincode-form" action="setPincode">
                                 <label for="police-station">Select police station:</label>
                                 <select id="policeStations" name="policeStations">
                                     <option value="" selected disabled>Select Police Station</option>
@@ -100,7 +100,9 @@
                                 <br>
                                 <label for="pincode-list">Select pincodes:</label>
                                 <div id="pincode-list">
-                                    <select name="pincodes" id="pincodes" multiple></select>
+                                    <select name="pincodes" id="pincodes" multiple>
+                                        <option value="" selected disabled>Select Pincodes</option>
+                                    </select>
                                     <!-- more checkboxes -->
                                 </div>
                                 <br>
