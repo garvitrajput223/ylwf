@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+
+	//FETCHING ALL POLICE STATIONS 
 	fetchAllStations();
 
 	function fetchAllStations(){
@@ -21,7 +23,7 @@ $(document).ready(function () {
 
 
 
-
+	//POLICE STATIONS USING DROPDOWN
 	$.ajax({
 		url: 'assets/php/get_police_data.php',
 		type: 'get',
@@ -32,9 +34,13 @@ $(document).ready(function () {
 				var id = response[i]['id'];
 				var name = response[i]['name'];
 				$("#policeStations").append("<option value='" + id + "' data-value2='" + name + "'>" + name + "</option>");
+				$("#policeStations1").append("<option value='" + id + "' data-value2='" + name + "'>" + name + "</option>");
+
 			}
 		}
 	});
+
+	//PINCODES BASED ON DISTRICT ID OF POLICE STATIONS
 	$("#policeStations").change(function() {
 		var id = $(this).val();
 		$.ajax({
@@ -53,4 +59,5 @@ $(document).ready(function () {
 			}
 		});
 	});
+	
 });

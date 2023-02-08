@@ -29,7 +29,7 @@
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">Total Stations</h4>
+									<h4 class="card-title">Stations List</h4>
 								</div>
 								<div class="card-body">
 									<div class="table-responsive" id="showAllStations">
@@ -60,12 +60,14 @@
                                         <option value="" selected disabled>Select District</option>
                                     </select>
                                 </div>
-                                <label for="name">Alias</label>
+                                <label for="name">Office Name [District Name - State Name]</label>
                                 <input type="text" id="name" name="name" required>
-                                <label for="email">Email</label>
+                                <label for="email">Office Email</label>
                                 <input type="email" id="email" name="email" required>
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone" required>
+                                <label for="phone">Office Phone</label>
+                                <input type="number" id="phone" name="phone" required>
+                                <label for="text">Office Address</label>
+                                <input type="text" id="address" name="address" required>
                                 <input type="submit" name="add-Stn-Btn" id="addStnBtn" value="Create Police Station">
                             </form>
                         </div>
@@ -87,7 +89,18 @@
                     <div class="card-body">
                         <div class="table-responsive" id="addUsers">
                             <form action="#" id="UserAddForm">
-                                
+                            <label for="police-station">Select police station:</label>
+                                <select id="policeStations1" name="policeStations1">
+                                    <option value="" selected disabled>Select Police Station</option>
+                                </select>
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Designation</label>
+                                <input type="text" id="designation" name="designation" required>
+                                <label for="email">Personal Email</label>
+                                <input type="email" id="email" name="email" type="email" required>
+                                <label for="phone">Phone</label>
+                                <input type="number" id="phone" name="phone" required>
                                 <input type="submit" name="add-Stn-Btn" id="addStnBtn" value="Create User">
                             </form>
                         </div>

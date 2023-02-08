@@ -63,10 +63,10 @@
 			return $result;
 		}
 
-		public function create_station($name, $email, $phone, $state, $district){
-            $sql = "INSERT INTO police_stations (name, email, phone, state_id, district_id) VALUES (:name, :email, :phone,:state, :district)";
+		public function create_station($name, $email, $phone,$address, $state, $district){
+            $sql = "INSERT INTO police_stations (name, email, phone,address, state_id, district_id) VALUES (:name, :email, :phone,:address,:state, :district)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute(['name'=>$name,'email'=>$email,'phone'=>$phone,'state'=>$state,'district'=>$district]);
+            $stmt->execute(['name'=>$name,'email'=>$email,'phone'=>$phone,'address'=>$address,'state'=>$state,'district'=>$district]);
             return true;
         }
 

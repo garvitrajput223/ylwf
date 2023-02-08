@@ -11,9 +11,7 @@
 		$username = $admin->test_input($_POST['username']);
 		$password = $admin->test_input($_POST['password']);
 		$hpassword = sha1($password);
-
 		$loggedInAdmin = $admin->admin_login($username, $hpassword);
-
 		if ($loggedInAdmin != null) {
 			echo 'admin_login';
 			$_SESSION['username'] = $username;
@@ -93,6 +91,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'fetchAllStations') {
                                 <th>Name</th>
                                 <th>E-Mail</th>
                                 <th>Phone</th>
+								<th>Address</th>
                             </tr>
                         </thead>
                     <tbody>
@@ -105,6 +104,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'fetchAllStations') {
                                 <td>'.$row['name'].'</td>
                                 <td>'.$row['email'].'</td>
                                 <td>'.$row['phone'].'</td>
+								<td>'.$row['address'].'</td>
                             </tr>';
         }	
         $output .= '
@@ -124,8 +124,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'fetchAllStations') {
 		$phone = $admin->test_input($_POST['phone']);
 		$state = $admin->test_input($_POST['state']);
 		$district = $admin->test_input($_POST['district']);
+		$address = $admin->test_input($_POST['address']);
 		//$pincode = $admin->test_input($_POST['pincode']);
-		$data = $admin->create_station($name, $email, $phone,$state, $district);
+		$data = $admin->create_station($name, $email, $phone,$address,$state, $district);
 		echo json_encode($data);
 	}
 
