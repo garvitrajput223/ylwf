@@ -76,6 +76,47 @@
 		}
 	}
 
+
+
+	
+//Handle Fetch all stations ajax request
+if (isset($_POST['action']) && $_POST['action'] == 'fetchAllStations') {
+    $output = '';
+    $data = $admin->fetchAllStations(1);
+    $path = '../assets/php/';
+
+    if ($data) {
+        $output .= '<table class="datatable table table-stripped text-center">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>E-Mail</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                    ';
+        foreach ($data as $row) {
+
+            $output .= '
+                            <tr>
+                                <td>'.$row['id'].'</td>
+                                <td>'.$row['name'].'</td>
+                                <td>'.$row['email'].'</td>
+                                <td>'.$row['phone'].'</td>
+                            </tr>';
+        }	
+        $output .= '
+                        </tbody>
+                    </table>';		
+        echo $output;			
+    } else {
+        echo "<h3 class='text-center text-secondary'>No Stations Found</h3>";
+    }
+}
+
+
 	//Adding New Police Station
 	if (isset($_POST['action']) && $_POST['action'] == 'add_station'){
 		$name = $admin->test_input($_POST['name']);

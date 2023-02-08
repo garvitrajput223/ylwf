@@ -24,7 +24,23 @@
             <a href="#" class="assign-pincodes">Assign Pincodes</a>
         </div>
         <br><br>
+<!-- DISPLAYING ALL STATIONS PRESENT -->
+                    <div class="row" id="allStations">
+						<div class="col-sm-12">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title">Total Stations</h4>
+								</div>
+								<div class="card-body">
+									<div class="table-responsive" id="showAllStations">
+										<h4 class="text-center text-lead mt-2">Please Wait...</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
+<!-- / DISPLAYING ALL STATIONS PRESENT -->
         <div class="row" style="display:none" id="addPoliceStations">
             <div class="col-sm-12">
                 <div class="card">

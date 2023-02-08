@@ -72,8 +72,12 @@
 
 
 		//Get Pin codes of Police Station DistrictWise
-		public function getPincode($police_station_id){
-			$sql = "SELECT c.pin_code, c.district_id, c.state_id FROM police_stations s JOIN districts d ON s.district_id = d.district_id JOIN cities c ON d.district_id = c.district_id WHERE s.id = $police_station_id";
+		public function fetchAllStations($val){
+			$sql = "SELECT * FROM police_stations";
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute();
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			return $result;
 		}
 
 		//Count web hits

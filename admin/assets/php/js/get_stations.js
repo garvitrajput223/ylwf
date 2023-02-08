@@ -1,4 +1,27 @@
 $(document).ready(function () {
+
+	fetchAllStations();
+
+	function fetchAllStations(){
+		$.ajax({
+			url: 'assets/php/admin-action.php',
+			method: 'post',
+			data: { action: 'fetchAllStations' },
+			success: function(response){
+				$("#showAllStations").html(response);
+				if ($('.datatable').length > 0) {
+			        $('.datatable').DataTable({
+			            "bFilter": true,
+			            "order": [[ 0, "desc" ]]
+			        });
+			    }	
+			}
+		});
+	}
+
+
+
+
 	$.ajax({
 		url: 'assets/php/get_police_data.php',
 		type: 'get',
