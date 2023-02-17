@@ -1,5 +1,7 @@
 <?php require_once 'assets/php/admin-header.php'; ?>
-			
+<head>
+    <link rel="stylesheet" href="assets/css/station.css">
+</head>
 			<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
@@ -52,11 +54,17 @@
 							<div class="card-deck">
 								<div class="card border-primary">
 									<div class="card-body">
-										<h3 class="text-center">COMPLAINT DETAILS</h3>
-										<p style="text-align:justify;" id="getData"></p>
-										<p style="text-align:justify;" id="getLostDate"></p>
-										<!-- <p style="text-align:justify;" id="getPlace"></p> -->
-										<p style="text-align:justify;" id="getAddress"></p>
+										<form action="#" id="forwardComplaint">
+											<h3 class="text-center">COMPLAINT DETAILS</h3>
+											<p style="text-align:justify; color:red">Lost Date</p> <h4 id="getLostDate"></h4>
+											<p style="text-align:justify; color:red">Details</p> <h4 id="getData"></h4>
+											<p style="text-align:justify; color:red" >Location</p> <h4 id="getAddress"></h4>
+											<!-- <h6>Select Station to Forward</h6>
+											<select class="table-responsive" id="policeStations1" name="policeStations1">
+													<option value="" selected disabled>Select Police Station</option>
+												</select>
+											<button type="button" class="btn btn-primary" id="forward">Forward To Concerned Station</button> -->
+										</form>
 									</div>
 								</div>
 							</div>
@@ -67,10 +75,8 @@
 					</div>
 				</div>
 			</div>
-		
 		<!-- jQuery -->
         <script src="assets/js/jquery-3.2.1.min.js"></script>
-		
 		<!-- Bootstrap Core JS -->
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
@@ -86,7 +92,6 @@
 		
 		<!-- Custom JS -->
 		<script  src="assets/js/script.js"></script>
-		<script  src="assets/php/js/notes.js"></script>
-		
+		<script  src="assets/php/js/notes.js"></script>		
     </body>
 </html>

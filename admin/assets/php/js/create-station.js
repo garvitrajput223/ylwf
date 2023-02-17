@@ -94,6 +94,25 @@ $(document).ready(function(){
                 }
             })
         }
+    });
+
+
+	//CREATING STATION USERS THROUGH ADMIN PANEL
+	$("#createStationUser").click(function(e){
+        if($("#UserAddForm")[0].checkValidity()){
+            e.preventDefault();
+            $.ajax({
+                url:'assets/php/admin-action.php',
+                method: 'post',
+                data: $("#UserAddForm").serialize()+'&action=addStationUser',
+                success: function(response){
+                    Swal.fire({
+						title: 'User Created Successfully.',
+						icon: 'success'
+					});
+                }
+            })
+        }
     })
 	//Assigning Pincodes to Stations
 });

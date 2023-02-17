@@ -63,12 +63,7 @@
 			return $result;
 		}
 
-		public function create_station($name, $email, $phone,$address, $state, $district){
-            $sql = "INSERT INTO police_stations (name, email, phone,address, state_id, district_id) VALUES (:name, :email, :phone,:address,:state, :district)";
-            $stmt = $this->conn->prepare($sql);
-            $stmt->execute(['name'=>$name,'email'=>$email,'phone'=>$phone,'address'=>$address,'state'=>$state,'district'=>$district]);
-            return true;
-        }
+		
 
 
 		//Get Pin codes of Police Station DistrictWise
@@ -125,8 +120,34 @@
 		}
 
 
-		//Fetch complaint details by ID
+		//CREATE STATION THROUGH ADMIN PANEL
+		public function create_station($name, $email, $phone,$address, $state, $district){
+            $sql = "INSERT INTO police_stations (name, email, phone,address, state_id, district_id) VALUES (:name, :email, :phone,:address,:state, :district)";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(['name'=>$name,'email'=>$email,'phone'=>$phone,'address'=>$address,'state'=>$state,'district'=>$district]);
+            return true;
+        }
 
+		//ADD STATION USER
+
+		public function create_station_user($station,$email,$designation,$password){
+			$sql = "INSERT INTO police_stations_users (police_station_id, username, designation, password) VALUES (:station, :email, :designation, :password)";
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute(['station'=>$station, 'email'=>$email,'designation'=>$designation,'password'=>$password]);
+			return true;
+		}
+
+
+		//FORWARD COMPLAINT DB
+		public function forwardComplaint($station, $id){
+			$sql = "UPDATE notes SET location = :station WHERE id = :id";
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute(['station'=>$station, 'id'=>$id]);
+			return true;
+		}
+
+
+		//Fetch complaint details by ID
 		public function fetchComplaint($id){
 			$sql = "SELECT notes.*, cities.*, districts.district_name, states.state_name FROM notes JOIN cities ON notes.city_id = cities.city_id JOIN districts ON notes.district_id = districts.district_id JOIN states ON Notes.state_id = states.state_id WHERE notes.id = :id";
 			$stmt = $this->conn->prepare($sql);

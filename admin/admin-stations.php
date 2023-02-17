@@ -21,7 +21,7 @@
         <div class="stationButtons">
             <a href="#" class="create-police-station">Create Police Station</a>
             <a href="#" class="add-users">Create Station Users</a>
-            <a href="#" class="assign-pincodes">Assign Pincodes</a>
+            <!-- <a href="#" class="assign-pincodes">Assign Pincodes</a> -->
         </div>
         <br><br>
 <!-- DISPLAYING ALL STATIONS PRESENT -->
@@ -87,21 +87,19 @@
                             <h4 />
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive" id="addUsers">
+                        <div class="table-responsive" id="addStationUsers">
                             <form action="#" id="UserAddForm">
                             <label for="police-station">Select police station:</label>
                                 <select id="policeStations1" name="policeStations1">
                                     <option value="" selected disabled>Select Police Station</option>
                                 </select>
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                                <label for="name">Designation</label>
-                                <input type="text" id="designation" name="designation" required>
-                                <label for="email">Personal Email</label>
-                                <input type="email" id="email" name="email" type="email" required>
-                                <label for="phone">Phone</label>
-                                <input type="number" id="phone" name="phone" required>
-                                <input type="submit" name="add-Stn-Btn" id="addStnBtn" value="Create User">
+                                <label for="username">Email</label>
+                                <input type="email" name="email" id="email">
+                                <label for="designation">Designation</label>
+                                <input type="text" name="designation" id="designation">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" value="<?php echo rand(1111111111,9999999999) ?>" readonly>
+                                <input type="submit" name="addUserButton" id="createStationUser" value="Create User">
                             </form>
                         </div>
                     </div>
@@ -127,7 +125,7 @@
                                     <option value="" selected disabled>Select Police Station</option>
                                 </select>
                                 <br>
-                                <label for="pincode-list">Select pincodes:</label>
+                                <label for="pincode-list">Select pincodes: <sup style="color:red;">Use <strong>ctrl+Click</strong> to select multiple</sup></label>
                                 <div id="pincode-list">
                                     <select name="pincodes" id="pincodes" multiple>
                                         <option value="" selected disabled>Select Pincodes</option>

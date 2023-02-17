@@ -51,10 +51,13 @@ $(document).ready(function () {
 			success: function(response) {
 				var len = response.length;
 				$("#pincodes").empty();
-				$("#pincodes").append("<option value='' selected disabled>Select Pincode</option>");
+				$("#pincodes").append("<option value='' selected disabled>Select Pincodes</option>");
 				for (var i = 0; i < len; i++) {
-					var pin_code = response[i]['pin_code'];
-					$("#pincodes").append("<option value='" + pin_code + "'>" + pin_code + "</option>");
+					var city_name = response[i]['city_name'];
+					var pincode = response[i]['pin_code'];
+					var city_id = response[i]['city_id'];
+					var data = city_name+" - "+pincode;
+					$("#pincodes").append("<option value='" + data + "'>" +data+"</option>");
 				}
 			}
 		});

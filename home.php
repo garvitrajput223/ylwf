@@ -74,10 +74,10 @@
 						echo '<input type="date" name="lostDate" class="form-control" value="' . date("Y-m-d") . '" min="2014-11-04" max="' . date("Y-m-d") . '"/>';
 						?>
 					</div>
-								<div class="form-group" >
+								<!-- <div class="form-group" >
 									<label for="Documents">Supporting Documents</label> <br> <span style="color: red; line-height:0px;">(Invoice, FIR Copy, Any Image of that item, etc.)</span>
 									<input name="document" id="previewDocument" type="file" class="form-control" accept="image/jpeg,image/gif,image/png,application/pdf"  placeholder="" ></input>
-								</div>
+								</div> -->
 					<div class="form-group">
 						<button type="submit" name="addNote" id="addNoteBtn" class="btn btn-block btn-success">Submit&nbsp;
 							<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;" id="add-note-spinner"></span></button>
@@ -147,7 +147,6 @@
 
 
 <script>
-
 	// function validate() {
 	// 			var file = $("#previewDocument")[0].files[0]; //fupFileUpload add class to your file upload control
 	// 			var fileType = file.type;

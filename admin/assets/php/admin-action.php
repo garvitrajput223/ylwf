@@ -117,6 +117,29 @@ if (isset($_POST['action']) && $_POST['action'] == 'fetchAllStations') {
 }
 
 
+	//Complaint Forwarding System
+	if(isset($_POST['action']) && $_POST['action'] == 'forwardComplaint' && isset($_POST['note_id'])){
+		$station = $admin->test_input($_POST['policeStations1']);
+		$id = $admin->test_input($_POST['note_id']);
+		$data = $admin->forwardComplaint($station,$id);
+		echo json_encode($data);
+	}
+
+
+	// Creating Station User through Admin Panel
+	if (isset($_POST['action']) && $_POST['action'] == 'addStationUser'){
+		$station = $admin->test_input($_POST['policeStations1']);
+		$email = $admin->test_input($_POST['email']);
+		$password = $admin->test_input($_POST['password']);
+		$designation = $admin->test_input($_POST['designation']);
+		$data = $admin->create_station_user($station,$email,$designation,$password);
+		echo json_encode($data);
+	}
+
+
+
+
+
 	//Adding New Police Station
 	if (isset($_POST['action']) && $_POST['action'] == 'add_station'){
 		$name = $admin->test_input($_POST['name']);
@@ -253,6 +276,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'fetchAllStations') {
 			echo "<h3 class='text-center text-secondary'>No Any Complaint Yet!</h3>";
 		}
 	}
+
 
 	//Handle Delete note of an user Ajax Reqest
 

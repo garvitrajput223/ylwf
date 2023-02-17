@@ -31,6 +31,8 @@
 		
 		<!-- Feathericon CSS -->
         <link rel="stylesheet" href="assets/css/feathericon.min.css">
+		<!-- LORD ANIMATED ICON -->
+		<script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
 
         <!-- Datatables CSS -->
 		<link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
@@ -106,31 +108,67 @@
 					<div id="sidebar-menu" class="sidebar-menu">
 						<ul>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-dashboard.php')?"active":""; ?>"> 
-								<a href="admin-dashboard.php"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+								<a href="admin-dashboard.php"><lord-icon
+									src="https://cdn.lordicon.com/gmzxduhd.json"
+									trigger="hover"
+									style="width:32px;height:32px">
+								</lord-icon> <span>Dashboard</span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-users.php')?"active":""; ?>"> 
-								<a href="admin-users.php"><i class="fe fe-users"></i> <span>Active Users</span></a>
+								<a href="admin-users.php"><lord-icon
+									src="https://cdn.lordicon.com/eszyyflr.json"
+									trigger="hover"
+									style="width:32px;height:32px">
+								</lord-icon> <span>Active Users</span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-notes.php')?"active":""; ?>"> 
-								<a href="admin-notes.php"><i class="fe fe-file"></i> <span>Complaints</span></a>
+								<a href="admin-notes.php"><lord-icon
+									src="https://cdn.lordicon.com/wxnxiano.json"
+									trigger="hover"
+									style="width:32px;height:32px">
+								</lord-icon><span>Complaints</span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-resolved-notes.php')?"active":""; ?>"> 
-								<a href="#"><i class="fe fe-file"></i> <span>Resolved Complaints</span></a>
+								<a href="#"><lord-icon
+									src="https://cdn.lordicon.com/nocovwne.json"
+									trigger="hover"
+									style="width:32px;height:32px">
+								</lord-icon><span>Resolved Complaints</span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-feedback.php')?"active":""; ?>"> 
-								<a href="admin-feedback.php"><i class="fe fe-comment-o"></i> <span>Feedback</span></a>
+								<a href="admin-feedback.php"><lord-icon
+									src="https://cdn.lordicon.com/zpxybbhl.json"
+									trigger="hover"
+									style="width:32px;height:32px">
+								</lord-icon><span>Feedback</span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-notification.php')?"active":""; ?>"> 
-								<a href="admin-notification.php"><i class="fe fe-bell"></i> <span>Notification</span> <span id="checkNotification"></span></a>
+								<a href="admin-notification.php"><lord-icon
+									src="https://cdn.lordicon.com/nxaaasqe.json"
+									trigger="hover"
+									style="width:32px;height:32px">
+								</lord-icon><span>Notification</span> <span id="checkNotification"></span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-deleteduser.php')?"active":""; ?>"> 
-								<a href="admin-deleteduser.php"><i class="fe fe-user-minus"></i> <span>Inactive Users</span></a>
+								<a href="admin-deleteduser.php"><lord-icon
+									src="https://cdn.lordicon.com/eszyyflr.json"
+									trigger="hover"
+									style="width:32px;height:32px">
+								</lord-icon> <span>Inactive Users</span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-stations.php')?"active":""; ?>"> 
-								<a href="admin-stations.php"><i class="fe fe-file"></i> <span>Station Management</span></a>
+								<a href="admin-stations.php"><lord-icon
+									src="https://cdn.lordicon.com/rqqkvjqf.json"
+									trigger="hover"
+									style="width:32px;height:32px">
+								</lord-icon> <span>Station Management</span></a>
 							</li>
 							<li> 
-								<a href="assets/php/admin-action.php?export=excel"><i class="fe fe-table"></i> <span>Export Users</span></a>
+								<a href="assets/php/admin-action.php?export=excel"><lord-icon
+									src="https://cdn.lordicon.com/rhvddzym.json"
+									trigger="hover"
+									style="width:32px;height:32px">
+								</lord-icon><span>Export Users</span></a>
 							</li>
 						</ul>
 					</div>
