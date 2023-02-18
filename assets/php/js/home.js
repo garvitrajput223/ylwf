@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
 	$.ajax({
 		url: 'assets/php/get_data.php',
 		type: 'get',
@@ -14,7 +13,7 @@ $(document).ready(function () {
 		}
 	});
 
-	// Retrieve list of districts based on selected state
+	// Retrieve list of districts based on selected state.
 	$("#state").change(function() {
 		var state_id = $(this).val();
 		$.ajax({
@@ -36,7 +35,6 @@ $(document).ready(function () {
 			}
 		});
 	});
-
 	// Retrieve list of cities based on selected district
 	$("#district").change(function() {
 		var district_id = $(this).val();
@@ -57,7 +55,6 @@ $(document).ready(function () {
 			}
 		});
 	});
-	
 
 	//Add New Note Ajax Request
 	$("#addNoteBtn").click(function (e) {
