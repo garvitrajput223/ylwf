@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	
 	fetchAllNotes();
+	fetchAllResolvedNotes();
 
 	//fetch all users notes
 	function fetchAllNotes(){
@@ -16,6 +17,24 @@ $(document).ready(function(){
 			            "order": [[ 0, "desc" ]]
 			        });
 			    }	
+			}
+		});
+	}
+
+	//Fetch All resolved notes
+	function fetchAllResolvedNotes(){
+		$.ajax({
+			url: 'assets/php/admin-action.php',
+			method: 'post',
+			data: { action: 'fetchAllResolvedNotes' },
+			success: function(response){
+				$("#showAllResolvedNotes").html(response);
+				// if ($('.datatable').length > 0) {
+			    //     $('.datatable').DataTable({
+			    //         "bFilter": true,
+			    //         "order": [[ 0, "desc" ]]
+			    //     });
+			    // }	
 			}
 		});
 	}

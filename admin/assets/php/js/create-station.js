@@ -78,6 +78,7 @@ $(document).ready(function(){
 			}
 		});
 	});
+
     //Creating new Police Station
     $("#addStnBtn").click(function(e){
         if($("#stnForm")[0].checkValidity()){

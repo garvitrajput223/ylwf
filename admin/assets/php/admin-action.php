@@ -278,6 +278,52 @@ if (isset($_POST['action']) && $_POST['action'] == 'fetchAllStations') {
 	}
 
 
+	//Handle show all notes user ajax request
+	if (isset($_POST['action']) && $_POST['action'] == 'fetchAllResolvedNotes') {
+		$output = '';
+		$note = $admin->fetchAllResolvedNotes();
+
+		if ($note) {
+			$output .= '<table class="datatable table table-stripped text-center">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Subject</th>
+									<th>Complaint</th>
+									<th>Written On</th>
+									<th>Updated On</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+						<tbody>
+						';
+			foreach ($note as $row) {
+
+				$output.= '    <tr>
+									<td>'.$row['id'].'</td>
+									<td>'.$row['name'].'</td>
+									<td>'.$row['email'].'</td>
+									<td>'.$row['title'].'</td>
+									<td>'.substr($row['note'],0, 50).'....</td>
+									<td>'.$row['created_at'].'</td>
+									<td>'.$row['updated_at'].'</td>
+									<td>
+										<a href="#" id="'.$row['id'].'" title="View Details" class="text-primary userDetailsIcon" data-toggle="modal" data-target="#showComplaintDetailsModal"><i class="fa fa-info-circle"></i></a>&nbsp;&nbsp;&nbsp;
+									</td>
+								</tr>';
+			}	
+			$output .= '
+							</tbody>
+						</table>';		
+			echo $output;			
+		} else {
+			echo "<h3 class='text-center text-secondary'>No Any Complaint Yet!</h3>";
+		}
+	}
+
+
 	//Handle Delete note of an user Ajax Reqest
 
 	if (isset($_POST['note_id'])) {

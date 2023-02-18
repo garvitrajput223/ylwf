@@ -21,11 +21,11 @@
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">Total Complaints</h4>
+									<h4 class="card-title">Total Resolved Complaints</h4>
 								</div>
 								<div class="card-body">
 
-									<div class="table-responsive" id="showAllNotes">
+									<div class="table-responsive" id="showAllResolvedNotes">
 										<h4 class="text-center text-lead mt-2">Please Wait...</h4>
 									</div>
 								</div>

@@ -128,8 +128,15 @@
 									style="width:32px;height:32px">
 								</lord-icon><span>Complaints</span></a>
 							</li>
+							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-list-found-items.php')?"active":""; ?>"> 
+								<a href="admin-list-found-items.php"><lord-icon
+									src="https://cdn.lordicon.com/wxnxiano.json"
+									trigger="hover"
+									style="width:32px;height:32px">
+								</lord-icon><span>List Found Items</span></a>
+							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-resolved-notes.php')?"active":""; ?>"> 
-								<a href="#"><lord-icon
+								<a href="admin-resolved-notes.php"><lord-icon
 									src="https://cdn.lordicon.com/nocovwne.json"
 									trigger="hover"
 									style="width:32px;height:32px">

@@ -39,7 +39,6 @@
 							</div>
 						</div>
 					</div>
-
 <!-- / DISPLAYING ALL STATIONS PRESENT -->
         <div class="row" style="display:none" id="addPoliceStations">
             <div class="col-sm-12">

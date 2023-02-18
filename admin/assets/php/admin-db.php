@@ -120,6 +120,16 @@
 		}
 
 
+		//Fetch All Resolved Notes
+		public function fetchAllResolvedNotes(){
+			$sql = "SELECT notes.id, notes.title, notes.note, notes.created_at, notes.updated_at, users.name, users.email FROM notes INNER JOIN users ON notes.uid = users.id WHERE status = 1";
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute();
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			return $result;
+		}
+
+
 		//CREATE STATION THROUGH ADMIN PANEL
 		public function create_station($name, $email, $phone,$address, $state, $district){
             $sql = "INSERT INTO police_stations (name, email, phone,address, state_id, district_id) VALUES (:name, :email, :phone,:address,:state, :district)";
