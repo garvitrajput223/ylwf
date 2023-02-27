@@ -1,9 +1,10 @@
 $(document).ready(function(){
+	
           $(".create-police-station").click(function(){
-          $("#addPoliceStations").show();
-		  $("#allStations").hide();
-		  $("#addUsersForm").hide();
-		  $("#assignNewPincode").hide();
+			$("#addPoliceStations").show();
+			$("#allStations").hide();
+			$("#addUsersForm").hide();
+			$("#assignNewPincode").hide();
 
         });
         $(".add-users").click(function(){

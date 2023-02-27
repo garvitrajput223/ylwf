@@ -50,7 +50,7 @@
 								
 								<div class="col-xl-4 col-sm-4 col-12">
 									<div class="card">
-										<div class="card-header lead text-center text-secondary">Total Unresolved Complaints</div>
+										<div class="card-header lead text-center text-danger">Total Unresolved Complaints</div>
 										<div class="card-body">
 											<h1 class="display-4 text-center text-secondary"><?= $count->totalCount('notes'); ?></h1>
 										</div>
@@ -61,6 +61,14 @@
 										<div class="card-header lead text-center text-secondary">Total Resolved Complaints</div>
 										<div class="card-body">
 											<h1 class="display-4 text-center text-secondary"><?= $count->totalResolveCount(); ?></h1>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-4 col-sm-4 col-12">
+									<div class="card">
+										<div class="card-header lead text-center text-primary">Total Found Items</div>
+										<div class="card-body">
+											<h1 class="display-4 text-center text-secondary"><?= $count->countFoundItems(); ?></h1>
 										</div>
 									</div>
 								</div>

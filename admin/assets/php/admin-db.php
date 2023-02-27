@@ -45,6 +45,12 @@
 			return $count;
 		}
 
+
+		
+
+
+
+
 		//Gender Percentage
 		public function genderPer(){
 			$sql = "SELECT gender, COUNT(*) AS number FROM users WHERE gender != '' GROUP BY gender";
@@ -62,8 +68,6 @@
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			return $result;
 		}
-
-		
 
 
 		//Get Pin codes of Police Station DistrictWise
@@ -129,6 +133,14 @@
 			return $result;
 		}
 
+		//FETCH FOUND ITEMS
+		public function fetchFoundItems($val){
+			$sql = "SELECT * FROM founditems";
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute();
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			return $result;
+		}
 
 		//CREATE STATION THROUGH ADMIN PANEL
 		public function create_station($name, $email, $phone,$address, $state, $district){
@@ -137,6 +149,14 @@
             $stmt->execute(['name'=>$name,'email'=>$email,'phone'=>$phone,'address'=>$address,'state'=>$state,'district'=>$district]);
             return true;
         }
+
+		//ADD FOUND ITEM
+		public function addLostItem($name, $description, $pname, $pemail, $phone, $paddress){
+			$sql = "INSERT INTO founditems (name, description, pname, pemail, phone, paddress) VALUES (:name, :description, :pname, :pemail, :phone, :paddress)";
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute(['name'=>$name, 'description'=>$description, 'pname'=>$pname, 'pemail'=>$pemail, 'phone'=>$phone, 'paddress'=>$paddress]);
+			return true;
+		}
 
 		//ADD STATION USER
 
@@ -211,6 +231,15 @@
         //count notification
         public function countNotification(){
         	$sql = "SELECT count(*) FROM notification WHERE type = 'admin'";
+        	$stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchColumn();
+            return $result;
+        }
+
+		 //count Found Items
+		 public function countFoundItems(){
+        	$sql = "SELECT count(*) FROM founditems";
         	$stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $result = $stmt->fetchColumn();
