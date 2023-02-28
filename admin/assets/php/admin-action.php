@@ -162,9 +162,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'fetchFoundItems') {
 
 
 	//Complaint Forwarding System
-	if(isset($_POST['action']) && $_POST['action'] == 'forwardComplaint' && isset($_POST['note_id'])){
+	if(isset($_POST['complain_id'])){
 		$station = $admin->test_input($_POST['policeStations1']);
-		$id = $admin->test_input($_POST['note_id']);
+		$id = $admin->test_input($_POST['complain_id']);
 		$data = $admin->forwardComplaint($station,$id);
 		echo json_encode($data);
 	}
@@ -323,7 +323,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'fetchFoundItems') {
 								</tr>';
 			}	
 			$output .= '
-							</tbody>
+							</tbody> 
 						</table>';		
 			echo $output;			
 		} else {

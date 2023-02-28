@@ -5,7 +5,6 @@
 </head>
 <div class="page-wrapper">
     <div class="content container-fluid">
-
         <!-- Page Header -->
         <div class="page-header">
             <div class="row">
@@ -57,7 +56,14 @@
                                     <label for="itemDescription">
                                         Description
                                     </label>
+                                    <label for="itemDescription">
+                                        Description
+                                    </label>
                                     <input type="text" name="itemDescription" id="itemDescription">
+                                    <label for="Location">
+                                        Location
+                                    </label>
+                                    <input type="text" name="location" id="location">
                                     <fieldset>
                                         <legend>Person Details(Who found item.)</legend>
                                         <label for="fname">Full Name:</label>
@@ -79,7 +85,6 @@
         </div>
     </div>
 </div>
-
 <!-- jQuery -->
 <script src="assets/js/jquery-3.2.1.min.js"></script>
 

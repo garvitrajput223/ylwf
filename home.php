@@ -68,15 +68,18 @@
 						</select>
 					</div>
 					<div class="form-group">
+						<input class="form-control" placeholder="Expected Location" type="text" name="location" id="location">
+					</div>
+					<div class="form-group">
 						<label for="dateLost">Date of Lost</label>
 						<!-- <input name="lostDate" type="date" class="form-control" placeholder="Date of Lost" ></input> -->
 						<?php
-						echo '<input type="date" name="lostDate" class="form-control" value="' . date("Y-m-d") . '" min="2014-11-04" max="' . date("Y-m-d") . '"/>';
+							echo '<input type="date" name="lostDate" class="form-control" value="' . date("Y-m-d") . '" min="2014-11-04" max="' . date("Y-m-d") . '"/>';
 						?>
 					</div>
 								<!-- <div class="form-group" >
 									<label for="Documents">Supporting Documents</label> <br> <span style="color: red; line-height:0px;">(Invoice, FIR Copy, Any Image of that item, etc.)</span>
-									<input name="document" id="previewDocument" type="file" class="form-control" accept="image/jpeg,image/gif,image/png,application/pdf"  placeholder="" ></input>
+									<input name="document" id="previewDocument" type="file" class="form-control" accept="image/jpeg,image/gif,image/png,application/pdf"  placeholder="" onblur="validate()"></input>
 								</div> -->
 					<div class="form-group">
 						<button type="submit" name="addNote" id="addNoteBtn" class="btn btn-block btn-success">Submit&nbsp;
@@ -147,35 +150,35 @@
 
 
 <script>
-	// function validate() {
-	// 			var file = $("#previewDocument")[0].files[0]; //fupFileUpload add class to your file upload control
-	// 			var fileType = file.type;
-	// 			var ValidImageTypes = ["image/gif", "image/jpeg", "image/png", "image/tiff","application/pdf" , "image/bmp"];
-	// 			if ($.inArray(fileType, ValidImageTypes) < 0) {
-	// 				alert("Please select valid image file."); //set label text if you want to display error message in label
-	// 				return false;
-	// 			}
-	// 			else if( file.size > 1000000){ // file.size is in bytes
-	// 				alert("Please select file less than 100 kb.");
-	// 				return false;
-	// 			}
-	// 			$(document).ready(function(){
-	// 			$("#add-note-form").submit(function(e){
-	// 				e.preventDefault();
-	// 				$("#edit-profile-spinner").show();
-	// 				$.ajax({
-	// 					url: 'assets/php/process.php',
-	// 					method: 'post',
-	// 					processData: false,
-	// 					contentType: false,
-	// 					cache: false,
-	// 					data: new FormData(this),
-	// 					success: function(response){
-	// 						$("#edit-profile-spinner").hide();
-	// 						location.reload();
-	// 					}
-	// 				});
-	// 			});
-	// 		});
-	// }
+	function validate() {
+				var file = $("#previewDocument")[0].files[0]; //fupFileUpload add class to your file upload control
+				var fileType = file.type;
+				var ValidImageTypes = ["image/gif", "image/jpeg", "image/png", "image/tiff","image/bmp"];
+				if ($.inArray(fileType, ValidImageTypes) < 0) {
+					alert("Please select valid image file."); //set label text if you want to display error message in label
+					return false;
+				}
+				else if( file.size > 1000000){ // file.size is in bytes
+					alert("Please select file less than 100 kb.");
+					return false;
+				}
+				$(document).ready(function(){
+				$("#add-note-form").submit(function(e){
+					e.preventDefault();
+					$("#edit-profile-spinner").show();
+					$.ajax({
+						url: 'assets/php/process.php',
+						method: 'post',
+						processData: false,
+						contentType: false,
+						cache: false,
+						data: new FormData(this),
+						success: function(response){
+							$("#edit-profile-spinner").hide();
+							location.reload();
+						}
+					});
+				});
+			});
+	}
 </script>

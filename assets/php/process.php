@@ -16,9 +16,9 @@
 		$state = $cuser->test_input($_POST['state']);
 		$district = $cuser->test_input($_POST['district']);
 		$city = $cuser->test_input($_POST['city']);
-		$location = $cuser->test_input($loc);
+		$location = $cuser->test_input($_POST['location']);
 		$lostDate = $cuser->test_input($_POST['lostDate']);
-		$cuser->add_new_note($cid, $title, $note, $city, $district, $state, $lostDate);
+		$cuser->add_new_note($cid, $title, $note, $city, $district, $state,$location, $lostDate);
 		$cuser->notification($cid, 'admin', 'Complaint Sent.');
 	}
 

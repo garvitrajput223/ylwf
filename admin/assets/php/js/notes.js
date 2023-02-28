@@ -63,46 +63,54 @@ $(document).ready(function(){
 		});
 	});
 
-//POLICE STATIONS USING DROPDOWN
-$.ajax({
-	url: 'assets/php/get_police_data.php',
-	type: 'get',
-	dataType: 'json',
-	success: function(response) {
-		var len = response.length;
-		for (var i = 0; i < len; i++) {
-			var id = response[i]['id'];
-			var name = response[i]['name'];
-			$("#policeStations").append("<option value='" + id + "' data-value2='" + name + "'>" + name + "</option>");
-			$("#policeStations1").append("<option value='" + id + "' data-value2='" + name + "'>" + name + "</option>");
 
-		}
-	}
-});
-
-
-//Complaint Forwarding
-$("#forward").click(function(e){
-	note_id = $(this).attr('id');
-	if($("#forwardComplaint")[0].checkValidity()){
-		e.preventDefault();
-		$.ajax({
-			url:'assets/php/admin-action.php',
-			method: 'post',
-			data: { note_id: note_id },
-			//data:$("#forwardComplaint").serialize()+'&action=forwardComplaint',
-			success: function(response){
-				Swal.fire({
-					title: 'Complaint Forwarded.',
-					icon: 'success'
-				});
-				fetchAllNotes();
+	//POLICE STATIONS USING DROPDOWN
+	$.ajax({
+		url: 'assets/php/get_police_data.php',
+		type: 'get',
+		dataType: 'json',
+		success: function(response) {
+			var len = response.length;
+			for (var i = 0; i < len; i++) {
+				var id = response[i]['id'];
+				var name = response[i]['name'];
+				$("#policeStations1").append("<option value='" + id + "'>" + name + "</option>");
 			}
-		})
-	}
-})
+		}
+	});
 
 
+
+//Forward to police station
+$("body").on("click", "#forward", function(e){
+	e.preventDefault();
+	complain_id = $(this).attr('id');
+	Swal.fire({
+	title: 'Are you sure?',
+	text: "You won't be able to revert this!",
+	icon: 'warning',
+	showCancelButton: true,
+	confirmButtonColor: '#3085d6',
+	cancelButtonColor: '#d33',
+	confirmButtonText: 'Yes, forward it!'
+	}).then((result) => {
+		if (result.value) {
+			$.ajax({
+				url: 'assets/php/admin-action.php',
+				method: 'post',
+				data: { complain_id: complain_id },
+				success: function(response){
+					Swal.fire(
+						'Success!',
+						'Complaint forwarded Successfully.',
+						'success'
+					)
+					fetchAllNotes();
+				}
+			});
+		}
+	});
+});
 
 
 	//Delete user note ajax reqest

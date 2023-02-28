@@ -73,7 +73,6 @@ $(document).ready(function () {
 						title: 'Complaint Added Successfully.',
 						icon: 'success'
 					});
-
 					displayAllNotes();
 				}
 			});

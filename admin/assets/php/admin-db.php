@@ -45,12 +45,6 @@
 			return $count;
 		}
 
-
-		
-
-
-
-
 		//Gender Percentage
 		public function genderPer(){
 			$sql = "SELECT gender, COUNT(*) AS number FROM users WHERE gender != '' GROUP BY gender";
@@ -170,7 +164,7 @@
 
 		//FORWARD COMPLAINT DB
 		public function forwardComplaint($station, $id){
-			$sql = "UPDATE notes SET location = :station WHERE id = :id";
+			$sql = "UPDATE notes SET station_id = :station WHERE id = :id";
 			$stmt = $this->conn->prepare($sql);
 			$stmt->execute(['station'=>$station, 'id'=>$id]);
 			return true;

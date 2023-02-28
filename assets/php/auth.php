@@ -77,10 +77,10 @@
 
 
 		//Add New Note
-		public function add_new_note($uid, $title, $note, $city, $district, $state, $lostDate){
-			$sql = "INSERT INTO notes (uid, title, note, city_id, district_id, state_id, lostDate) VALUES (:uid, :title, :note, :city, :district, :state, :lostDate)";
+		public function add_new_note($uid, $title, $note, $city, $district, $state,$location, $lostDate){
+			$sql = "INSERT INTO notes (uid, title, note, city_id, district_id, state_id,location, lostDate) VALUES (:uid, :title, :note, :city, :district, :state,:location, :lostDate)";
 			$stmt = $this->conn->prepare($sql);
-			$stmt->execute(['uid'=>$uid, 'title'=>$title, 'note'=>$note, 'city'=>$city, 'district'=>$district, 'state'=>$state, 'lostDate'=>$lostDate ]);
+			$stmt->execute(['uid'=>$uid, 'title'=>$title, 'note'=>$note, 'city'=>$city, 'district'=>$district, 'state'=>$state,'location'=>$location, 'lostDate'=>$lostDate ]);
 			return true;
 		}
 
