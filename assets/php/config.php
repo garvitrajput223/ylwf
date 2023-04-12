@@ -1,8 +1,8 @@
 <?php
 
 	class Database {
-		const USERNAME = 'admin@garvitrajput.ninja';
-		const PASSWORD = 'Garvit223@';
+		const USERNAME = 'youlost.wefound@garvitrajput.cloud';
+		const PASSWORD = 'Ylwf@2023';
 
 		private $dsn = "mysql:host=localhost;dbname=ylwf";
 		private $dbuser = "root";

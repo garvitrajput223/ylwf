@@ -52,6 +52,4 @@
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 		
     </body>
-
-<!-- Mirrored from dreamguys.co.in/demo/ventura/blank-page.html by HTTrack Website Copier/3.x [XR&CO'2017], Sat, 18 Apr 2020 05:52:31 GMT -->
 </html>

@@ -115,10 +115,37 @@
 			return true;
 		}
 
+
+		//ADD FOUND ITEM
+		public function addLostItem($name, $description, $pname, $pemail, $phone, $paddress){
+			$sql = "INSERT INTO founditems (name, description, pname, pemail, phone, paddress) VALUES (:name, :description, :pname, :pemail, :phone, :paddress)";
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute(['name'=>$name, 'description'=>$description, 'pname'=>$pname, 'pemail'=>$pemail, 'phone'=>$phone, 'paddress'=>$paddress]);
+			return true;
+		}
+
+		 //count Found Items
+		 public function countFoundItems(){
+        	$sql = "SELECT count(*) FROM founditems";
+        	$stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchColumn();
+            return $result;
+        }
+
+		//LIST FOUND ITEMS
+		public function fetchFoundItems($val){
+			$sql = "SELECT * FROM founditems";
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute();
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			return $result;
+		}
+
 		//Fetch All Users Notes
 		public function fetchAllNotes(){
-			$sql = "SELECT notes.id, notes.title, notes.note, notes.created_at, notes.updated_at, users.name, users.email FROM notes INNER JOIN users ON notes.uid = users.id WHERE status = 0";
-			//$sql = "SELECT c.* FROM notes c JOIN police_stations_users u ON c.uid = u.id JOIN police_stations s ON u.police_station_id = s.id WHERE s.district_id = c.district_id";
+			//$sql = "SELECT notes.id, notes.title, notes.note, notes.created_at, notes.updated_at, users.name, users.email FROM notes INNER JOIN users ON notes.uid = users.id WHERE status = 0";
+			$sql = "SELECT c.* FROM notes c JOIN police_stations_users u ON c.uid = u.id JOIN police_stations s ON u.police_station_id = s.id WHERE s.district_id = c.district_id";
 			$stmt = $this->conn->prepare($sql);
 			$stmt->execute();
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);

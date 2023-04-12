@@ -2,8 +2,8 @@
 
 	class Database {
 
-		const USERNAME = 'EMAIL';
-		const PASSWORD = 'Password';
+		const USERNAME = 'youlost.wefound@garvitrajput.cloud';
+		const PASSWORD = 'Ylwf@2023';
 
 		private $dsn = "mysql:host=localhost;dbname=ylwf";
 		private $dbuser = "root";

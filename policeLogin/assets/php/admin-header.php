@@ -4,7 +4,6 @@
 		header("Location:index.php");
 		exit();
 	}
-
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +86,7 @@
 									<img src="assets/img/profiles/avatar.png" alt="User Image" class="avatar-img rounded-circle">
 								</div>
 								<div class="user-text">
-									<h6>Welcome</h6>
+									<h6>Welcome User</h6>
 									<p class="text-muted mb-0"><?php echo $_SESSION['username']; ?></p>
 								</div>
 							</div>
@@ -95,10 +94,13 @@
 						</div>
 					</li>
 					<!-- /User Menu -->
+					
 				</ul>
 				<!-- /Header Right Menu -->
+				
             </div>
 			<!-- /Header -->
+	
 			<!-- Sidebar -->
             <div class="sidebar" id="sidebar">
                 <div class="sidebar-inner slimscroll">
@@ -116,7 +118,7 @@
 									src="https://cdn.lordicon.com/eszyyflr.json"
 									trigger="hover"
 									style="width:32px;height:32px">
-								</lord-icon> <span>Active Citizens</span></a>
+								</lord-icon> <span>Active Users</span></a>
 							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-notes.php')?"active":""; ?>"> 
 								<a href="admin-notes.php"><lord-icon
@@ -125,19 +127,28 @@
 									style="width:32px;height:32px">
 								</lord-icon><span>Complaints</span></a>
 							</li>
+							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-list-found-items.php')?"active":""; ?>"> 
+								<a href="admin-list-found-items.php"><lord-icon
+									src="https://cdn.lordicon.com/wxnxiano.json"
+									trigger="hover"
+									style="width:32px;height:32px">
+								</lord-icon><span>List Found Items</span></a>
+							</li>
 							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-resolved-notes.php')?"active":""; ?>"> 
-								<a href="#"><lord-icon
+								<a href="admin-resolved-notes.php"><lord-icon
 									src="https://cdn.lordicon.com/nocovwne.json"
 									trigger="hover"
 									style="width:32px;height:32px">
 								</lord-icon><span>Resolved Complaints</span></a>
 							</li>
-							<li class="<?= (basename($_SERVER['PHP_SELF']) == 'admin-station-user-management.php')?"active":""; ?>"> 
-								<a href="admin-station-user-management.php"><lord-icon
-									src="https://cdn.lordicon.com/eszyyflr.json"
+							<!--  -->
+							
+							<li> 
+								<a href="assets/php/admin-action.php?export=excel"><lord-icon
+									src="https://cdn.lordicon.com/rhvddzym.json"
 									trigger="hover"
 									style="width:32px;height:32px">
-								</lord-icon> <span>Users Management</span></a>
+								</lord-icon><span>Export Users</span></a>
 							</li>
 						</ul>
 					</div>

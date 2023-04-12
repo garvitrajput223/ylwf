@@ -75,6 +75,47 @@
 	}
 
 
+	//Handle Fetch all found items
+if (isset($_POST['action']) && $_POST['action'] == 'fetchFoundItems') {
+    $output = '';
+    $data = $admin->fetchFoundItems(1);
+    $path = '../assets/php/';
+
+    if ($data) {
+        $output .= '<table class="datatable table table-stripped text-center">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Item Name</th>
+                                <th>Description</th>
+                                <th>Person Name</th>
+								<th>Email</th>
+								<th>Phone</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                    ';
+        foreach ($data as $row) {
+
+            $output .= '
+                            <tr>
+                                <td>'.$row['id'].'</td>
+                                <td>'.$row['name'].'</td>
+                                <td>'.$row['description'].'</td>
+                                <td>'.$row['pname'].'</td>
+								<td>'.$row['pemail'].'</td>
+								<td>'.$row['phone'].'</td>
+                            </tr>';
+        }	
+        $output .= '
+                        </tbody>
+                    </table>';		
+        echo $output;			
+    } else {
+        echo "<h3 class='text-center text-secondary'>No Data Found</h3>";
+    }
+}
+
 
 	
 //Handle Fetch all stations ajax request
@@ -130,6 +171,17 @@ if (isset($_POST['action']) && $_POST['action'] == 'fetchAllStations') {
 		echo json_encode($data);
 	}
 
+//List New Found Item
+if(isset($_POST['action']) && $_POST['action'] == 'add_item'){
+	$name = $admin->test_input($_POST['itemName']);
+	$description = $admin->test_input($_POST['itemDescription']);
+	$pname = $admin->test_input($_POST['pname']);
+	$pemail = $admin->test_input($_POST['pemail']);
+	$phone = $admin->test_input($_POST['phone']);
+	$paddress = $admin->test_input($_POST['paddress']);
+	$data = $admin->addLostItem($name, $description, $pname, $pemail, $phone, $paddress);
+	echo json_encode($data);
+}
 	//Handle view user ajax request
 	if (isset($_POST['details_id'])) {
 		$id = $_POST['details_id'];

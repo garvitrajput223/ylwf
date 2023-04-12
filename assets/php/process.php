@@ -32,7 +32,7 @@
 								<tr>
 									<td>#</td>
 									<td>Title</td>
-									<td>Note</td>
+									<td>Complaint</td>
 									<td>Action</td>
 								</tr>
 							</thead>
@@ -166,14 +166,14 @@
 
     	try {
 			$mail->isSMTP();
-            $mail->Host = 'smtp.zoho.in';
+            $mail->Host = 'smtp.zoho.com';
             $mail->SMTPAuth = true;
             $mail->Username = Database::USERNAME;
             $mail->Password = Database::PASSWORD;
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
-            $mail->setFrom(Database::USERNAME,'YLF');
+            $mail->setFrom(Database::USERNAME,'You Lost We Found');
             $mail->addAddress($cemail);
 
             $mail->isHTML(true);
